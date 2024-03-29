@@ -1,7 +1,10 @@
-node_modules
-
 .idea
 
-coverage
+/node_modules
 
-.env
+# Ignore test-related files
+/coverage.data
+/coverage/
+
+# Build files
+/dist
