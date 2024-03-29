@@ -1,6 +1,6 @@
 {
   "name": "common-crypto-tools",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -9,7 +9,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "dist/polkadot"
   ],
   "scripts": {
     "build": "tsup"
