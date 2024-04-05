@@ -46,7 +46,7 @@ type Staking_Ledger_Json = {
 null
 ```
 
-### <a name="getcontroller"></a>getLedgerData
+### <a name="getcontroller"></a>getController
 **Params**
 - apiPromise: instance of ApiPromise
 - address: string
