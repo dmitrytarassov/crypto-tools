@@ -4,6 +4,13 @@
 - [abbreviateAddress](#abbreviateaddress) - truncate address, like `0x387...dCE`
 
 ### <a name="abbreviateaddress"></a>abbreviateAddress
+**Usage**
+```typescript
+import { abbreviateAddress } from "common-crypto-tools";
+
+const shortedAddress = await abbreviateAddress("account_address", 3); // "acc...ess"
+```
+
 **Params**
 - address: string
 - options or symbols count
@@ -25,8 +32,15 @@ type Options = {
 }
 ```
 
+**Return value**
+```typescript
+string
+```
+
 **Examples**
 ```typescript
+import { abbreviateAddress } from "common-crypto-tools";
+
 abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE")
 // "0x3877...EdCE")
 

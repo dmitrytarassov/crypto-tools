@@ -1,7 +1,7 @@
 {
   "keywords": ["web3", "polkadot", "crypto"],
   "name": "common-crypto-tools",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "dist/polkadot"
   ],
   "exports": {
-    "./polkadot": "./dist/polkadot/index.js"
+    "./polkadot": "./dist/polkadot/index.js",
+    ".": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup"

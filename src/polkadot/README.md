@@ -6,11 +6,18 @@
 - [getController](#getcontroller) - get staking controller, for stash account
 
 ### <a name="getaccountdata"></a>getAccountData
+**Usage**
+```typescript
+import { getAccountData } from "common-crypto-tools/polkadot";
+
+const data = await getAccountData(apiPromise, "account_address");
+```
+
 **Params**
 - apiPromise: instance of ApiPromise
 - address: string
 
-**Response**
+**Return value**
 ```typescript
 type Staking_Account_Json = {
   nonce: number;
@@ -29,11 +36,18 @@ null
 ```
 
 ### <a name="getledgerdata"></a>getLedgerData
+**Usage**
+```typescript
+import { getLedgerData } from "common-crypto-tools/polkadot";
+
+const data = await getLedgerData(apiPromise, "account_address");
+```
+
 **Params**
 - apiPromise: instance of ApiPromise
 - address: string
 
-**Response**
+**Return value**
 ```typescript
 type Staking_Ledger_Json = {
   stash: string;
@@ -47,11 +61,18 @@ null
 ```
 
 ### <a name="getcontroller"></a>getController
+**Usage**
+```typescript
+import { getController } from "common-crypto-tools/polkadot";
+
+const controller = await getController(apiPromise, "account_address");
+```
+
 **Params**
 - apiPromise: instance of ApiPromise
 - address: string
 
-**Response**
+**Return value**
 ```typescript
 string | null
 ```
