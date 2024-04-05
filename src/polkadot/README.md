@@ -3,6 +3,7 @@
 ## Tools
 - [getAccountData](#getaccountdata) - get account info, like balances, nonce, etc...
 - [getLedgerData](#getledgerdata) - get staking data, like bonded / unbonded, rewards eras...
+- [getController](#getcontroller) - get staking controller, for stash account
 
 ### <a name="getaccountdata"></a>getAccountData
 **Params**
@@ -43,4 +44,14 @@ type Staking_Ledger_Json = {
 }
 // or
 null
+```
+
+### <a name="getcontroller"></a>getLedgerData
+**Params**
+- apiPromise: instance of ApiPromise
+- address: string
+
+**Response**
+```typescript
+string | null
 ```
