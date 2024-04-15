@@ -1,3 +1,5 @@
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdmitrytarassov%2Fcrypto-tools%2Fmain%2Fpackage.json&query=%24.version&style=for-the-badge&label=Common%20Crypto%20Tools&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcommon-crypto-tools%3FactiveTab%3Dreadme)
+
 # The list of tools for web3 and crypto
 
 ## [Tools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md)
