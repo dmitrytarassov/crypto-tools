@@ -10,6 +10,7 @@ export const getController = async (
   }
 
   const response = await api.query.staking.bonded(address);
+
   if (response && response.toString()) {
     return response.toString();
   }
