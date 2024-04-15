@@ -4,38 +4,18 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 
-// src/polkadot/index.ts
-var polkadot_exports = {};
-__export(polkadot_exports, {
-  getAccountData: () => getAccountData,
-  getController: () => getController,
-  getLedgerData: () => getLedgerData
+// src/common/index.ts
+var common_exports = {};
+__export(common_exports, {
+  abbreviateAddress: () => abbreviateAddress,
+  toBigNumber: () => toBigNumber
 });
 
-// src/polkadot/balances/getLedgerData.ts
-async function getLedgerData(apiPromise, address) {
-  const data = await apiPromise.query.staking.ledger(address);
-  return data.toJSON();
+// src/common/toBigNumber.ts
+import { BigNumber } from "ethers";
+function toBigNumber(value) {
+  return BigNumber.from(value);
 }
-
-// src/polkadot/balances/getAccountData.ts
-async function getAccountData(apiPromise, address) {
-  const data = await apiPromise.query.staking.account(address);
-  return data.toJSON();
-}
-
-// src/polkadot/staking/getController.ts
-import { isAddress } from "@polkadot/util-crypto";
-var getController = async (api, address) => {
-  if (!isAddress(address)) {
-    throw new Error(`${address} is not an address`);
-  }
-  const response = await api.query.staking.bonded(address);
-  if (response && response.toString()) {
-    return response.toString();
-  }
-  return null;
-};
 
 // src/common/abbreviateAddress.ts
 var defaults = {
@@ -80,10 +60,45 @@ function abbreviateAddress(address, options) {
   )}${address.slice(-_symbolsAtEnd)}`;
 }
 
+// src/polkadot/index.ts
+var polkadot_exports = {};
+__export(polkadot_exports, {
+  getAccountData: () => getAccountData,
+  getController: () => getController,
+  getLedgerData: () => getLedgerData
+});
+
+// src/polkadot/balances/getLedgerData.ts
+async function getLedgerData(apiPromise, address) {
+  const data = await apiPromise.query.staking.ledger(address);
+  return data.toJSON();
+}
+
+// src/polkadot/balances/getAccountData.ts
+async function getAccountData(apiPromise, address) {
+  const data = await apiPromise.query.staking.account(address);
+  return data.toJSON();
+}
+
+// src/polkadot/staking/getController.ts
+import { isAddress } from "@polkadot/util-crypto";
+var getController = async (api, address) => {
+  if (!isAddress(address)) {
+    throw new Error(`${address} is not an address`);
+  }
+  const response = await api.query.staking.bonded(address);
+  if (response && response.toString()) {
+    return response.toString();
+  }
+  return null;
+};
+
 // src/index.ts
 var polkadot = polkadot_exports;
+var common = common_exports;
 export {
   abbreviateAddress,
+  common,
   polkadot
 };
 //# sourceMappingURL=index.mjs.map

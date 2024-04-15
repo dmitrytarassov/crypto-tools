@@ -2,6 +2,7 @@
 
 ## Tools
 - [abbreviateAddress](#abbreviateaddress) - truncate address, like `0x387...dCE`
+- [toBigNumber](#to_big_number) - transform any digital value to `BigNumber`
 
 ### <a name="abbreviateaddress"></a>abbreviateAddress
 **Usage**
@@ -12,7 +13,7 @@ const shortedAddress = await abbreviateAddress("account_address", 3); // "acc...
 ```
 
 **Params**
-- address: string
+- address: `string`
 - options or symbols count
 
 **Options**
@@ -86,4 +87,20 @@ abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
   symbolsCount: 2,
 })
 // "0x38--CE"
+```
+
+### <a name="to_bit_number"></a>toBigNumber
+**Usage**
+```typescript
+import { toBigNumber } from "common-crypto-tools/common";
+
+const value = toBigNumber(123321); // BigNumber.from(123321)
+```
+
+**Params**
+- value: `BigNumber | Bytes | bigint | string | number`
+
+**Return value**
+```typescript
+BigNumber
 ```

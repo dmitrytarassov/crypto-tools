@@ -4,6 +4,7 @@
 
 ## [Tools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md)
 - [abbreviateAddress](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#abbreviateaddress) - truncate address, like `0x387...dCE`
+- [toBigNumber](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_number) - transform any digital value to `BigNumber`
 
 ## [Polkadot](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md)
 - [getAccountData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountdata) - get account info, like balances, nonce, etc...

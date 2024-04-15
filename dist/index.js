@@ -21,42 +21,23 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   abbreviateAddress: () => abbreviateAddress,
+  common: () => common,
   polkadot: () => polkadot
 });
 module.exports = __toCommonJS(src_exports);
 
-// src/polkadot/index.ts
-var polkadot_exports = {};
-__export(polkadot_exports, {
-  getAccountData: () => getAccountData,
-  getController: () => getController,
-  getLedgerData: () => getLedgerData
+// src/common/index.ts
+var common_exports = {};
+__export(common_exports, {
+  abbreviateAddress: () => abbreviateAddress,
+  toBigNumber: () => toBigNumber
 });
 
-// src/polkadot/balances/getLedgerData.ts
-async function getLedgerData(apiPromise, address) {
-  const data = await apiPromise.query.staking.ledger(address);
-  return data.toJSON();
+// src/common/toBigNumber.ts
+var import_ethers = require("ethers");
+function toBigNumber(value) {
+  return import_ethers.BigNumber.from(value);
 }
-
-// src/polkadot/balances/getAccountData.ts
-async function getAccountData(apiPromise, address) {
-  const data = await apiPromise.query.staking.account(address);
-  return data.toJSON();
-}
-
-// src/polkadot/staking/getController.ts
-var import_util_crypto = require("@polkadot/util-crypto");
-var getController = async (api, address) => {
-  if (!(0, import_util_crypto.isAddress)(address)) {
-    throw new Error(`${address} is not an address`);
-  }
-  const response = await api.query.staking.bonded(address);
-  if (response && response.toString()) {
-    return response.toString();
-  }
-  return null;
-};
 
 // src/common/abbreviateAddress.ts
 var defaults = {
@@ -101,11 +82,46 @@ function abbreviateAddress(address, options) {
   )}${address.slice(-_symbolsAtEnd)}`;
 }
 
+// src/polkadot/index.ts
+var polkadot_exports = {};
+__export(polkadot_exports, {
+  getAccountData: () => getAccountData,
+  getController: () => getController,
+  getLedgerData: () => getLedgerData
+});
+
+// src/polkadot/balances/getLedgerData.ts
+async function getLedgerData(apiPromise, address) {
+  const data = await apiPromise.query.staking.ledger(address);
+  return data.toJSON();
+}
+
+// src/polkadot/balances/getAccountData.ts
+async function getAccountData(apiPromise, address) {
+  const data = await apiPromise.query.staking.account(address);
+  return data.toJSON();
+}
+
+// src/polkadot/staking/getController.ts
+var import_util_crypto = require("@polkadot/util-crypto");
+var getController = async (api, address) => {
+  if (!(0, import_util_crypto.isAddress)(address)) {
+    throw new Error(`${address} is not an address`);
+  }
+  const response = await api.query.staking.bonded(address);
+  if (response && response.toString()) {
+    return response.toString();
+  }
+  return null;
+};
+
 // src/index.ts
 var polkadot = polkadot_exports;
+var common = common_exports;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   abbreviateAddress,
+  common,
   polkadot
 });
 //# sourceMappingURL=index.js.map
