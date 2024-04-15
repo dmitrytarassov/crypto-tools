@@ -89,7 +89,7 @@ abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
 // "0x38--CE"
 ```
 
-### <a name="to_bit_number"></a>toBigNumber
+### <a name="to_big_number"></a>toBigNumber
 **Usage**
 ```typescript
 import { toBigNumber } from "common-crypto-tools/common";
