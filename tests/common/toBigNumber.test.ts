@@ -25,4 +25,9 @@ describe("toBigNumber", () => {
       BigNumber.from(BigInt(Number.MAX_SAFE_INTEGER * 123321)).toString()
     );
   });
+
+  it("should convert from hex string and back", () => {
+    expect(toBigNumber("0x1908b12a")).toEqual(BigNumber.from(420000042));
+    expect(toBigNumber(420000042).toHexString()).toEqual("0x1908b12a");
+  });
 });

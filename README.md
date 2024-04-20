@@ -6,6 +6,9 @@
 - [abbreviateAddress](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#abbreviateaddress) - truncate address, like `0x387...dCE`
 - [toBigNumber](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_number) - transform any digital value to `BigNumber`
 
+# [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)
+- [getOperatorDelegatorsHistory](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
+
 ## [Polkadot](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md)
 - [getAccountData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountdata) - get account info, like balances, nonce, etc...
 - [getLedgerData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getledgerdata) - get staking data, like bonded / unbonded, rewards eras...

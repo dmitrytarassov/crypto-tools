@@ -8,6 +8,6 @@ cp tsconfig.json dist/
 
 cd dist
 
-#npm pack --dry-run
+npm pack --dry-run
 
 yarn publish; rm package.json; rm README.md; rm tsconfig.json

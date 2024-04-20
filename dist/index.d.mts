@@ -1,29 +1,10 @@
-import { BigNumberish, BigNumber } from 'ethers';
+import { _ as _common } from './index-DQNCN8fm.mjs';
+export { a as abbreviateAddress } from './index-DQNCN8fm.mjs';
 import { _ as _polkadot } from './index-r_VZMx7F.mjs';
+import 'ethers';
 import '@polkadot/api';
-
-declare function toBigNumber(value: BigNumberish): BigNumber;
-
-type Size = {
-    start: number;
-    end: number;
-    include0x?: boolean;
-};
-type Options = {
-    size: number | [number, number] | Size;
-    symbolsCount?: number;
-    symbol?: string;
-    ignoreList?: string[];
-};
-declare function abbreviateAddress(address: string, options?: Options | number): string;
-
-declare const _common_abbreviateAddress: typeof abbreviateAddress;
-declare const _common_toBigNumber: typeof toBigNumber;
-declare namespace _common {
-  export { _common_abbreviateAddress as abbreviateAddress, _common_toBigNumber as toBigNumber };
-}
 
 declare const polkadot: typeof _polkadot;
 declare const common: typeof _common;
 
-export { abbreviateAddress, common, polkadot };
+export { common, polkadot };
