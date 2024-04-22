@@ -21,6 +21,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var common_exports = {};
 __export(common_exports, {
   abbreviateAddress: () => abbreviateAddress,
+  removeLeading0x: () => removeLeading0x,
   toBigNumber: () => toBigNumber
 });
 module.exports = __toCommonJS(common_exports);
@@ -73,9 +74,19 @@ function abbreviateAddress(address, options) {
     symbolsCount
   )}${address.slice(-_symbolsAtEnd)}`;
 }
+
+// src/common/removeLeading0x.ts
+function removeLeading0x(data) {
+  if (data.startsWith("0x")) {
+    const [, , ...rest] = data;
+    return rest.join("");
+  }
+  return data;
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   abbreviateAddress,
+  removeLeading0x,
   toBigNumber
 });
 //# sourceMappingURL=index.js.map

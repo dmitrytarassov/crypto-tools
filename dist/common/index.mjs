@@ -46,8 +46,18 @@ function abbreviateAddress(address, options) {
     symbolsCount
   )}${address.slice(-_symbolsAtEnd)}`;
 }
+
+// src/common/removeLeading0x.ts
+function removeLeading0x(data) {
+  if (data.startsWith("0x")) {
+    const [, , ...rest] = data;
+    return rest.join("");
+  }
+  return data;
+}
 export {
   abbreviateAddress,
+  removeLeading0x,
   toBigNumber
 };
 //# sourceMappingURL=index.mjs.map

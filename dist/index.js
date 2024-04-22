@@ -30,6 +30,7 @@ module.exports = __toCommonJS(src_exports);
 var common_exports = {};
 __export(common_exports, {
   abbreviateAddress: () => abbreviateAddress,
+  removeLeading0x: () => removeLeading0x,
   toBigNumber: () => toBigNumber
 });
 
@@ -82,17 +83,30 @@ function abbreviateAddress(address, options) {
   )}${address.slice(-_symbolsAtEnd)}`;
 }
 
+// src/common/removeLeading0x.ts
+function removeLeading0x(data) {
+  if (data.startsWith("0x")) {
+    const [, , ...rest] = data;
+    return rest.join("");
+  }
+  return data;
+}
+
 // src/polkadot/index.ts
 var polkadot_exports = {};
 __export(polkadot_exports, {
   getAccountData: () => getAccountData,
   getAccountNonce: () => getAccountNonce,
   getAccountNonceAndBump: () => getAccountNonceAndBump,
+  getActiveEra: () => getActiveEra2,
   getController: () => getController,
-  getLedgerData: () => getLedgerData
+  getCurrentEra: () => getCurrentEra,
+  getErasRewardPoints: () => getErasRewardPoints,
+  getLedgerData: () => getLedgerData,
+  polkadotExplorerUrl: () => polkadotExplorerUrl
 });
 
-// src/polkadot/balances/getLedgerData.ts
+// src/polkadot/staking/getLedgerData.ts
 async function getLedgerData(apiPromise, address) {
   const data = await apiPromise.query.staking.ledger(address);
   return data.toJSON();
@@ -133,6 +147,43 @@ async function getAccountNonceAndBump(apiPromise, account) {
     }
   ];
 }
+
+// src/polkadot/staking/getErasRewardPoints.ts
+async function getErasRewardPoints(apiPromise, era) {
+  if (era < 0) {
+    throw new Error(`Provided Era: ${era} is less than zero`);
+  }
+  const points = await apiPromise.query.staking.erasRewardPoints(era);
+  return points.toJSON();
+}
+
+// src/polkadot/common/polkadotExplorerUrl.ts
+var linkType = {
+  account: "account",
+  address: "account",
+  a: "account",
+  extrinsic: "extrinsic",
+  transaction: "extrinsic",
+  t: "extrinsic",
+  validator: "validator",
+  v: "validator"
+};
+function polkadotExplorerUrl(networkName, domain = "subscan.io") {
+  return function(type, addressOrHash) {
+    const value = typeof addressOrHash === "string" ? addressOrHash : addressOrHash.toHuman();
+    return `https://${networkName.toLowerCase()}.${domain}/${linkType[type]}/${value}`;
+  };
+}
+
+// src/polkadot/staking/getActiveEra.ts
+var getActiveEra = async (api) => {
+  const era = (await api.query.staking.activeEra()).toString();
+  return parseInt(era, 10);
+};
+
+// src/polkadot/index.ts
+var getActiveEra2 = getActiveEra;
+var getCurrentEra = getActiveEra;
 
 // src/index.ts
 var polkadot = polkadot_exports;

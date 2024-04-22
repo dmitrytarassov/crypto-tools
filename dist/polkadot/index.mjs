@@ -1,4 +1,4 @@
-// src/polkadot/balances/getLedgerData.ts
+// src/polkadot/staking/getLedgerData.ts
 async function getLedgerData(apiPromise, address) {
   const data = await apiPromise.query.staking.ledger(address);
   return data.toJSON();
@@ -39,11 +39,52 @@ async function getAccountNonceAndBump(apiPromise, account) {
     }
   ];
 }
+
+// src/polkadot/staking/getErasRewardPoints.ts
+async function getErasRewardPoints(apiPromise, era) {
+  if (era < 0) {
+    throw new Error(`Provided Era: ${era} is less than zero`);
+  }
+  const points = await apiPromise.query.staking.erasRewardPoints(era);
+  return points.toJSON();
+}
+
+// src/polkadot/common/polkadotExplorerUrl.ts
+var linkType = {
+  account: "account",
+  address: "account",
+  a: "account",
+  extrinsic: "extrinsic",
+  transaction: "extrinsic",
+  t: "extrinsic",
+  validator: "validator",
+  v: "validator"
+};
+function polkadotExplorerUrl(networkName, domain = "subscan.io") {
+  return function(type, addressOrHash) {
+    const value = typeof addressOrHash === "string" ? addressOrHash : addressOrHash.toHuman();
+    return `https://${networkName.toLowerCase()}.${domain}/${linkType[type]}/${value}`;
+  };
+}
+
+// src/polkadot/staking/getActiveEra.ts
+var getActiveEra = async (api) => {
+  const era = (await api.query.staking.activeEra()).toString();
+  return parseInt(era, 10);
+};
+
+// src/polkadot/index.ts
+var getActiveEra2 = getActiveEra;
+var getCurrentEra = getActiveEra;
 export {
   getAccountData,
   getAccountNonce,
   getAccountNonceAndBump,
+  getActiveEra2 as getActiveEra,
   getController,
-  getLedgerData
+  getCurrentEra,
+  getErasRewardPoints,
+  getLedgerData,
+  polkadotExplorerUrl
 };
 //# sourceMappingURL=index.mjs.map
