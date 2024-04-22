@@ -4,7 +4,6 @@
 
 ## [Tools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md)
 - [abbreviateAddress](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#abbreviateaddress) - truncate address, like `0x387...dCE`
-- [removeLeading0x](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#removeleading0x) - remove leading 0x from string, useful for logs parsing `0x387...dCE` -> `387...dCE`
 - [toBigNumber](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_number) - transform any digital value to `BigNumber`
 
 # [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)

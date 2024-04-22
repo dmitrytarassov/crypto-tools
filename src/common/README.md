@@ -2,6 +2,7 @@
 
 ## Tools
 - [abbreviateAddress](#abbreviateaddress) - truncate address, like `0x387...dCE`
+- [removeLeading0x](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#removeleading0x) - remove leading 0x from string, useful for logs parsing `0x387...dCE` -> `387...dCE`
 - [toBigNumber](#to_big_number) - transform any digital value to `BigNumber`
 
 ### <a name="abbreviateaddress"></a>abbreviateAddress
@@ -87,6 +88,22 @@ abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
   symbolsCount: 2,
 })
 // "0x38--CE"
+```
+
+### <a name="removeleading0x"></a>removeLeading0x
+**Usage**
+```typescript
+import { removeLeading0x } from "common-crypto-tools/common";
+
+removeLeading0x("0x60b521110672f6f871978fd3ac4a835b5e30c3fa727c04c70dbc543fcad38b0e"); // 60b521110672f6f871978fd3ac4a835b5e30c3fa727c04c70dbc543fcad38b0e
+```
+
+**Params**
+- value: `string`
+
+**Return value**
+```typescript
+string
 ```
 
 ### <a name="to_big_number"></a>toBigNumber

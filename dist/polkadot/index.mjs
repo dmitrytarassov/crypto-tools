@@ -22,8 +22,27 @@ var getController = async (api, address) => {
   }
   return null;
 };
+
+// src/polkadot/account/getAccountNonce.ts
+async function getAccountNonce(apiPromise, account) {
+  const nonce = await apiPromise.rpc.system.accountNextIndex(account);
+  return parseInt(nonce.toString(), 10);
+}
+async function getAccountNonceAndBump(apiPromise, account) {
+  const nonce = await getAccountNonce(apiPromise, account);
+  let i = 0;
+  return [
+    nonce,
+    () => {
+      i++;
+      return nonce + i;
+    }
+  ];
+}
 export {
   getAccountData,
+  getAccountNonce,
+  getAccountNonceAndBump,
   getController,
   getLedgerData
 };

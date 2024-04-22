@@ -21,6 +21,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var polkadot_exports = {};
 __export(polkadot_exports, {
   getAccountData: () => getAccountData,
+  getAccountNonce: () => getAccountNonce,
+  getAccountNonceAndBump: () => getAccountNonceAndBump,
   getController: () => getController,
   getLedgerData: () => getLedgerData
 });
@@ -50,9 +52,28 @@ var getController = async (api, address) => {
   }
   return null;
 };
+
+// src/polkadot/account/getAccountNonce.ts
+async function getAccountNonce(apiPromise, account) {
+  const nonce = await apiPromise.rpc.system.accountNextIndex(account);
+  return parseInt(nonce.toString(), 10);
+}
+async function getAccountNonceAndBump(apiPromise, account) {
+  const nonce = await getAccountNonce(apiPromise, account);
+  let i = 0;
+  return [
+    nonce,
+    () => {
+      i++;
+      return nonce + i;
+    }
+  ];
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   getAccountData,
+  getAccountNonce,
+  getAccountNonceAndBump,
   getController,
   getLedgerData
 });

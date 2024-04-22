@@ -25,11 +25,19 @@ declare function getAccountData(apiPromise: ApiPromise, address: string): Promis
 
 declare const getController: (api: ApiPromise, address: string) => Promise<string | null>;
 
+interface Bump {
+    (): number;
+}
+declare function getAccountNonce(apiPromise: ApiPromise, account: string): Promise<number>;
+declare function getAccountNonceAndBump(apiPromise: ApiPromise, account: string): Promise<[number, Bump]>;
+
 declare const _polkadot_getAccountData: typeof getAccountData;
+declare const _polkadot_getAccountNonce: typeof getAccountNonce;
+declare const _polkadot_getAccountNonceAndBump: typeof getAccountNonceAndBump;
 declare const _polkadot_getController: typeof getController;
 declare const _polkadot_getLedgerData: typeof getLedgerData;
 declare namespace _polkadot {
-  export { _polkadot_getAccountData as getAccountData, _polkadot_getController as getController, _polkadot_getLedgerData as getLedgerData };
+  export { _polkadot_getAccountData as getAccountData, _polkadot_getAccountNonce as getAccountNonce, _polkadot_getAccountNonceAndBump as getAccountNonceAndBump, _polkadot_getController as getController, _polkadot_getLedgerData as getLedgerData };
 }
 
-export { _polkadot as _, getAccountData as a, getController as b, getLedgerData as g };
+export { _polkadot as _, getAccountData as a, getController as b, getAccountNonce as c, getAccountNonceAndBump as d, getLedgerData as g };
