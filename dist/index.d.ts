@@ -1,6 +1,6 @@
 import { _ as _common } from './index-ZBXh3oyw.js';
 export { a as abbreviateAddress } from './index-ZBXh3oyw.js';
-import { _ as _polkadot } from './index-VqQgAueD.js';
+import { _ as _polkadot } from './index-DIhveJHv.js';
 import 'ethers';
 import '@polkadot/api';
 import '@polkadot/types/interfaces';

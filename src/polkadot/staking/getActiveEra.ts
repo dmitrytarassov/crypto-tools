@@ -1,6 +1,13 @@
 import { ApiPromise } from "@polkadot/api";
 
-export const getActiveEra = async (api: ApiPromise): Promise<number> => {
-  const era = (await api.query.staking.activeEra()).toString();
-  return parseInt(era, 10);
+type GetActiveEraResult = {
+  index: number;
+  start: number;
+};
+
+export const getActiveEra = async (
+  api: ApiPromise
+): Promise<GetActiveEraResult> => {
+  const era = (await api.query.staking.activeEra()).toJSON();
+  return era as unknown as GetActiveEraResult;
 };

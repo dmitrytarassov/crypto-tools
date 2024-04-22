@@ -177,8 +177,8 @@ function polkadotExplorerUrl(networkName, domain = "subscan.io") {
 
 // src/polkadot/staking/getActiveEra.ts
 var getActiveEra = async (api) => {
-  const era = (await api.query.staking.activeEra()).toString();
-  return parseInt(era, 10);
+  const era = (await api.query.staking.activeEra()).toJSON();
+  return era;
 };
 
 // src/polkadot/index.ts

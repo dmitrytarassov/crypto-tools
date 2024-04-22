@@ -80,7 +80,10 @@ const era = await getCurrentEra(apiPromise);
 
 **Return value**
 ```typescript
-number
+type GetActiveEraResult = {
+  index: number;
+  start: number;
+};
 ```
 
 ### <a name="getcontroller"></a>getController

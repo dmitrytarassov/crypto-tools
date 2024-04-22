@@ -44,8 +44,14 @@ declare function getErasRewardPoints(apiPromise: ApiPromise, era: number): Promi
 type LinkType = "account" | "address" | "a" | "extrinsic" | "transaction" | "t" | "validator" | "v";
 declare function polkadotExplorerUrl(networkName: string, domain?: string): (type: LinkType, addressOrHash: string | Hash) => string;
 
-declare const getActiveEra: (api: _polkadot_api.ApiPromise) => Promise<number>;
-declare const getCurrentEra: (api: _polkadot_api.ApiPromise) => Promise<number>;
+declare const getActiveEra: (api: _polkadot_api.ApiPromise) => Promise<{
+    index: number;
+    start: number;
+}>;
+declare const getCurrentEra: (api: _polkadot_api.ApiPromise) => Promise<{
+    index: number;
+    start: number;
+}>;
 
 declare const _polkadot_getAccountData: typeof getAccountData;
 declare const _polkadot_getAccountNonce: typeof getAccountNonce;
