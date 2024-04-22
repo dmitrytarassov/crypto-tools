@@ -156,9 +156,9 @@ import { polkadotExplorerUrl } from "common-crypto-tools/polkadot";
 
 const explorer = polkadotExplorerUrl("polkadot");
 
-explorer("account", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // 12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
-explorer("address", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // 12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
-explorer("a", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // 12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
+explorer("account", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // https://polkadot.subscan.io/account/12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
+explorer("address", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // https://polkadot.subscan.io/account/12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
+explorer("a", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // https://polkadot.subscan.io/account/12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
 
 explorer("validator", "16DKyH4fggEXeGwCytqM19e9NFGkgR2neZPDJ5ta8BKpPbPK") // https://polkadot.subscan.io/validator/16DKyH4fggEXeGwCytqM19e9NFGkgR2neZPDJ5ta8BKpPbPK
 explorer("v", "16DKyH4fggEXeGwCytqM19e9NFGkgR2neZPDJ5ta8BKpPbPK") // https://polkadot.subscan.io/validator/16DKyH4fggEXeGwCytqM19e9NFGkgR2neZPDJ5ta8BKpPbPK
@@ -170,4 +170,7 @@ explorer("t", "20186359-2") // https://polkadot.subscan.io/extrinsic/20186359-2
 const transactionHash: Hash = api.tx.staking.bond(...); 
 // !! Hash is not the string
 explorer("t", transactionHash) // https://polkadot.subscan.io/extrinsic/${stringified_hash}
+
+const anotherExplorer = polkadotExplorerUrl("polkadot", "amazingexploreryounameit.io");
+anotherExplorer("account", "12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA") // https://polkadot.amazingexploreryounameit.io/account/12zdkKxQqsdNXPJ5oDgLWtgRzGjhoKiShhkD26tXj8mPjaXA
 ```
