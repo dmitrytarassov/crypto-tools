@@ -10,4 +10,4 @@ cd dist
 
 npm pack --dry-run
 
-yarn publish; rm package.json; rm README.md; rm tsconfig.json
+yarn publish
