@@ -3,6 +3,9 @@
 export const EigenLayerDelegationContract =
   "0x39053D51B77DC0d36036Fc1fCc8Cb819df8Ef37A";
 
+export const DelegationManagerContract =
+  "0x1784be6401339fc0fedf7e9379409f5c1bfe9dda";
+
 export const OperatorSharesDecreased =
   "0x6909600037b75d7b4733aedd815442b5ec018a827751c832aaff64eba5d6d2dd";
 

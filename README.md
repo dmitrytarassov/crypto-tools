@@ -8,6 +8,7 @@
 
 # [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)
 - [getOperatorDelegatorsHistory](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
+- [delegationManagerContract](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#delegationmanagercontract) - get delegationManagerContract contract instance
 
 ## [Polkadot](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md)
 - [getAccountData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountdata) - get account info, like balances, nonce, etc...

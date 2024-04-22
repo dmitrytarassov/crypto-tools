@@ -3,6 +3,9 @@
 ## Tools
 - [getOperatorDelegatorsHistory](#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
 
+## Contacts | ethers-v5
+- [delegationManagerContract](#delegationmanagercontract) - get delegationManagerContract contract instance
+
 ### <a name="getoperatordelegatorshistory"></a>getOperatorDelegatorsHistory
 **Usage**
 ```typescript
@@ -57,4 +60,18 @@ const data = await getOperatorDelegatorsHistory(provider, {
 });
 
 const history = data.get("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE");
+```
+
+### <a name="delegationmanagercontract"></a>delegationManagerContract
+**Usage**
+```typescript
+import { delegationManagerContract } from "common-crypto-tools/eigenlayer";
+
+const provider = new ethers.providers.JsonRpcProvider(
+  "https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY"
+);
+
+const contract = delegationManagerContract(provider);
+// example
+const data = await contract.getDelegatableShares("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE");
 ```
