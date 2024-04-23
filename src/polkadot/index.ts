@@ -1,5 +1,5 @@
-export { getLedgerData } from "./staking/getLedgerData";
-export { getAccountData } from "./balances/getAccountData";
+export { getLedgerData } from "./account/getLedgerData";
+export { getAccountData } from "./account/getAccountData";
 export { getController } from "./staking/getController";
 export {
   getAccountNonce,

@@ -17,7 +17,7 @@ export async function getAccountData(
   apiPromise: ApiPromise,
   address: string
 ): Promise<Staking_Account_Json | null> {
-  const data = await apiPromise.query.staking.account(address);
+  const data = await apiPromise.query.system.account(address);
 
   return data.toJSON() as unknown as Staking_Account_Json | null;
 }
