@@ -1,11 +1,10 @@
 import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { ApiPromise } from "@polkadot/api";
 
-import { polkadotAccount } from "./test_utils/constants";
-import { getConnection } from "./test_utils/getConnection";
-
-import { getLedgerData } from "../../src/polkadot";
-import { expectError } from "../test_utils/expectError";
+import { getLedgerData } from "../../../src/polkadot";
+import { expectError } from "../../test_utils/expectError";
+import { polkadotAccount } from "../test_utils/constants";
+import { getConnection } from "../test_utils/getConnection";
 
 describe("getLedgerData", () => {
   let connection: ApiPromise;

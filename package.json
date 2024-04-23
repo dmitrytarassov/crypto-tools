@@ -6,7 +6,7 @@
     "eigenlayer"
   ],
   "name": "common-crypto-tools",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsup",
     "generate:types:v5:DelegationManager": "typechain --target ethers-v5 --out-dir src/eigenlayer/contracts/typechain/ethers-v5/DelegationManager/ src/eigenlayer/contracts/abi/DelegationManager.json",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@polkadot/api": "^10.12.4",

@@ -4,10 +4,10 @@ import { Hash } from '@polkadot/types/interfaces';
 
 type Staking_Ledger_Json = {
     stash: string;
-    total: string;
-    active: string;
+    total: number;
+    active: number;
     unlocking: string[];
-    claimedRewards: number[];
+    legacyClaimedRewards: number[];
 };
 declare function getLedgerData(apiPromise: ApiPromise, address: string): Promise<Staking_Ledger_Json | null>;
 

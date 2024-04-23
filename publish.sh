@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm -rf dist/*
+
 yarn build
 
 cp package.json dist/

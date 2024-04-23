@@ -1,10 +1,9 @@
 import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { ApiPromise } from "@polkadot/api";
 
-import { polkadotAccount } from "./test_utils/constants";
-import { getConnection } from "./test_utils/getConnection";
-
-import { getAccountNonceAndBump } from "../../src/polkadot";
+import { getAccountNonceAndBump } from "../../../src/polkadot";
+import { polkadotAccount } from "../test_utils/constants";
+import { getConnection } from "../test_utils/getConnection";
 
 describe("getAccountNonceAndBump", () => {
   let connection: ApiPromise;

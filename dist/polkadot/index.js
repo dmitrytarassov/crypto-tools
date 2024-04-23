@@ -32,15 +32,15 @@ __export(polkadot_exports, {
 });
 module.exports = __toCommonJS(polkadot_exports);
 
-// src/polkadot/staking/getLedgerData.ts
+// src/polkadot/account/getLedgerData.ts
 async function getLedgerData(apiPromise, address) {
   const data = await apiPromise.query.staking.ledger(address);
   return data.toJSON();
 }
 
-// src/polkadot/balances/getAccountData.ts
+// src/polkadot/account/getAccountData.ts
 async function getAccountData(apiPromise, address) {
-  const data = await apiPromise.query.staking.account(address);
+  const data = await apiPromise.query.system.account(address);
   return data.toJSON();
 }
 
