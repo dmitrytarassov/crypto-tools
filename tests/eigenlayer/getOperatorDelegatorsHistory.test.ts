@@ -1,8 +1,10 @@
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it, jest } from "@jest/globals";
 import { configDotenv } from "dotenv";
 import { ethers } from "ethers";
 
 import * as process from "process";
+
+jest.setTimeout(30_000);
 
 import {
   OperatorSharesDecreasedAction,

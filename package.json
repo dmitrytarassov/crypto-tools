@@ -6,7 +6,7 @@
     "eigenlayer"
   ],
   "name": "common-crypto-tools",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -21,11 +21,9 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@polkadot/api": "^10.12.4",
-    "@polkadot/types": "^10.12.4",
+    "@polkadot/api": "^11.2.1",
+    "@polkadot/types": "^11.2.1",
     "@polkadot/util-crypto": "^12.6.2",
-    "@types/express": "^4.17.21",
-    "@types/supertest": "^6.0.2",
     "ethers": "^5.7.2",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
@@ -34,8 +32,10 @@
     "@jest/globals": "^29.5.0",
     "@microsoft/api-extractor": "^7.43.0",
     "@typechain/ethers-v5": "^11.1.2",
+    "@types/express": "^4.17.21",
     "@types/node": "^20",
     "@types/sha256": "^0.2.2",
+    "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
     "dotenv": "^16.4.5",
