@@ -1,16 +1,11 @@
 import { ApiPromise } from "@polkadot/api";
 
-type ErasRewardPointsResult = {
-  total: number;
-  individual: {
-    [validator: string]: number;
-  };
-};
-export async function getErasRewardPoints(apiPromise: ApiPromise, era: number) {
-  if (era < 0) {
-    throw new Error(`Provided Era: ${era} is less than zero`);
-  }
+import * as api from "../api";
+import { Staking_Eras_Reward_Points_Json } from "../api/query/staking/erasRewardPoints";
 
-  const points = await apiPromise.query.staking.erasRewardPoints(era);
-  return points.toJSON() as unknown as ErasRewardPointsResult;
+export async function getErasRewardPoints(
+  apiPromise: ApiPromise,
+  era: number
+): Promise<Staking_Eras_Reward_Points_Json> {
+  return api.query.staking.erasRewardPoints(apiPromise, era);
 }

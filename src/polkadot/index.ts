@@ -11,3 +11,5 @@ export { polkadotExplorerUrl } from "./common/polkadotExplorerUrl";
 import * as _getActiveEra from "./staking/getActiveEra";
 export const getActiveEra = _getActiveEra.getActiveEra;
 export const getCurrentEra = _getActiveEra.getActiveEra;
+
+export * as api from "./api";

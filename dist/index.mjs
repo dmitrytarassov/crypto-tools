@@ -73,6 +73,7 @@ function removeLeading0x(data) {
 // src/polkadot/index.ts
 var polkadot_exports = {};
 __export(polkadot_exports, {
+  api: () => api_exports,
   getAccountData: () => getAccountData,
   getAccountNonce: () => getAccountNonce,
   getAccountNonceAndBump: () => getAccountNonceAndBump,
@@ -84,21 +85,85 @@ __export(polkadot_exports, {
   polkadotExplorerUrl: () => polkadotExplorerUrl
 });
 
-// src/polkadot/account/getLedgerData.ts
-async function getLedgerData(apiPromise, address) {
-  const data = await apiPromise.query.staking.ledger(address);
-  return data.toJSON();
+// src/polkadot/api/index.ts
+var api_exports = {};
+__export(api_exports, {
+  query: () => query_exports
+});
+
+// src/polkadot/api/query/index.ts
+var query_exports = {};
+__export(query_exports, {
+  proxy: () => proxy_exports,
+  staking: () => staking_exports,
+  system: () => system_exports
+});
+
+// src/polkadot/api/query/proxy/index.ts
+var proxy_exports = {};
+__export(proxy_exports, {
+  palletVersion: () => palletVersion,
+  proxies: () => proxies
+});
+
+// src/polkadot/api/query/proxy/proxies.ts
+async function proxies(apiPromise, address) {
+  const proxies2 = await apiPromise.query.proxy.proxies(address);
+  return proxies2;
 }
 
-// src/polkadot/account/getAccountData.ts
-async function getAccountData(apiPromise, address) {
+// src/polkadot/api/query/proxy/palletVersion.ts
+async function palletVersion(apiPromise) {
+  return (await apiPromise.query.proxy.palletVersion()).toJSON();
+}
+
+// src/polkadot/api/query/system/index.ts
+var system_exports = {};
+__export(system_exports, {
+  account: () => account,
+  accountNextIndex: () => accountNextIndex,
+  palletVersion: () => palletVersion2
+});
+
+// src/polkadot/api/query/system/account.ts
+async function account(apiPromise, address) {
   const data = await apiPromise.query.system.account(address);
   return data.toJSON();
 }
 
-// src/polkadot/staking/getController.ts
+// src/polkadot/api/query/system/accountNextIndex.ts
+async function accountNextIndex(apiPromise, account2) {
+  const nonce = await apiPromise.rpc.system.accountNextIndex(account2);
+  return parseInt(nonce.toString(), 10);
+}
+
+// src/polkadot/api/query/system/palletVersion.ts
+async function palletVersion2(apiPromise) {
+  return (await apiPromise.query.system.palletVersion()).toJSON();
+}
+
+// src/polkadot/api/query/staking/index.ts
+var staking_exports = {};
+__export(staking_exports, {
+  activeEra: () => activeEra,
+  bonded: () => bonded,
+  erasRewardPoints: () => erasRewardPoints,
+  erasValidatorReward: () => erasValidatorReward,
+  ledger: () => ledger,
+  nominators: () => nominators,
+  palletVersion: () => palletVersion3,
+  validators: () => validators
+});
+
+// src/polkadot/api/query/staking/activeEra.ts
+var activeEra = async (api) => {
+  const era = (await api.query.staking.activeEra()).toJSON();
+  return era;
+};
+
+// src/polkadot/api/query/staking/bonded.ts
 import { isAddress } from "@polkadot/util-crypto";
-var getController = async (api, address) => {
+var bonded = async (api, address) => {
   if (!isAddress(address)) {
     throw new Error(`${address} is not an address`);
   }
@@ -109,13 +174,68 @@ var getController = async (api, address) => {
   return null;
 };
 
-// src/polkadot/account/getAccountNonce.ts
-async function getAccountNonce(apiPromise, account) {
-  const nonce = await apiPromise.rpc.system.accountNextIndex(account);
-  return parseInt(nonce.toString(), 10);
+// src/polkadot/api/query/staking/erasRewardPoints.ts
+async function erasRewardPoints(apiPromise, era) {
+  if (era < 0) {
+    throw new Error(`Provided Era: ${era} is less than zero`);
+  }
+  const points = await apiPromise.query.staking.erasRewardPoints(era);
+  return points.toJSON();
 }
-async function getAccountNonceAndBump(apiPromise, account) {
-  const nonce = await getAccountNonce(apiPromise, account);
+
+// src/polkadot/api/query/staking/erasValidatorReward.ts
+async function erasValidatorReward(apiPromise, era) {
+  if (era < 0) {
+    throw new Error(`Provided Era: ${era} is less than zero`);
+  }
+  const points = await apiPromise.query.staking.erasValidatorReward(era);
+  return points.toJSON();
+}
+
+// src/polkadot/api/query/staking/ledger.ts
+async function ledger(apiPromise, address) {
+  const data = await apiPromise.query.staking.ledger(address);
+  return data.toJSON();
+}
+
+// src/polkadot/api/query/staking/nominators.ts
+async function nominators(apiPromise, address) {
+  const result = await apiPromise.query.staking.nominators(address);
+  return result.toJSON();
+}
+
+// src/polkadot/api/query/staking/palletVersion.ts
+async function palletVersion3(apiPromise) {
+  return (await apiPromise.query.staking.palletVersion()).toJSON();
+}
+
+// src/polkadot/api/query/staking/validators.ts
+async function validators(apiPromise, validatorAddress) {
+  const result = await apiPromise.query.staking.validators(validatorAddress);
+  return result.toJSON();
+}
+
+// src/polkadot/account/getLedgerData.ts
+async function getLedgerData(apiPromise, address) {
+  return query_exports.staking.ledger(apiPromise, address);
+}
+
+// src/polkadot/account/getAccountData.ts
+async function getAccountData(apiPromise, address) {
+  return query_exports.system.account(apiPromise, address);
+}
+
+// src/polkadot/staking/getController.ts
+var getController = async (apiPromise, address) => {
+  return query_exports.staking.bonded(apiPromise, address);
+};
+
+// src/polkadot/account/getAccountNonce.ts
+async function getAccountNonce(apiPromise, account2) {
+  return query_exports.system.accountNextIndex(apiPromise, account2);
+}
+async function getAccountNonceAndBump(apiPromise, account2) {
+  const nonce = await getAccountNonce(apiPromise, account2);
   let i = 0;
   return [
     nonce,
@@ -128,11 +248,7 @@ async function getAccountNonceAndBump(apiPromise, account) {
 
 // src/polkadot/staking/getErasRewardPoints.ts
 async function getErasRewardPoints(apiPromise, era) {
-  if (era < 0) {
-    throw new Error(`Provided Era: ${era} is less than zero`);
-  }
-  const points = await apiPromise.query.staking.erasRewardPoints(era);
-  return points.toJSON();
+  return query_exports.staking.erasRewardPoints(apiPromise, era);
 }
 
 // src/polkadot/common/polkadotExplorerUrl.ts
@@ -154,9 +270,8 @@ function polkadotExplorerUrl(networkName, domain = "subscan.io") {
 }
 
 // src/polkadot/staking/getActiveEra.ts
-var getActiveEra = async (api) => {
-  const era = (await api.query.staking.activeEra()).toJSON();
-  return era;
+var getActiveEra = async (apiPromise) => {
+  return query_exports.staking.activeEra(apiPromise);
 };
 
 // src/polkadot/index.ts

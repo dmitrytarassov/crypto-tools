@@ -1,18 +1,11 @@
 import { ApiPromise } from "@polkadot/api";
 
-type Staking_Ledger_Json = {
-  stash: string;
-  total: number;
-  active: number;
-  unlocking: string[];
-  legacyClaimedRewards: number[];
-};
+import * as api from "../api";
+import { Staking_Ledger_Json } from "../api/query/staking/ledger";
 
 export async function getLedgerData(
   apiPromise: ApiPromise,
   address: string
 ): Promise<Staking_Ledger_Json | null> {
-  const data = await apiPromise.query.staking.ledger(address);
-
-  return data.toJSON() as unknown as Staking_Ledger_Json | null;
+  return api.query.staking.ledger(apiPromise, address);
 }

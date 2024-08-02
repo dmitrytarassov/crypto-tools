@@ -1,5 +1,7 @@
 import { ApiPromise } from "@polkadot/api";
 
+import * as api from "../api";
+
 interface Bump {
   (): number;
 }
@@ -8,9 +10,7 @@ export async function getAccountNonce(
   apiPromise: ApiPromise,
   account: string
 ): Promise<number> {
-  const nonce = await apiPromise.rpc.system.accountNextIndex(account);
-
-  return parseInt(nonce.toString(), 10);
+  return api.query.system.accountNextIndex(apiPromise, account);
 }
 
 export async function getAccountNonceAndBump(
