@@ -13,6 +13,10 @@ describe("getAccountData", () => {
     connection = await getConnection("polkadot");
   });
 
+  afterAll(() => {
+    connection.disconnect();
+  });
+
   it("should return real data", async () => {
     const data = await getAccountData(connection, polkadotAccount);
     if (data) {

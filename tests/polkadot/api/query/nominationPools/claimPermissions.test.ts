@@ -1,7 +1,6 @@
-import { beforeAll, describe, expect, it } from "@jest/globals";
+import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { ApiPromise } from "@polkadot/api";
 
-import { claimPermissions } from "../../../../../src/polkadot/api/query/nominationPools";
 import { expectError } from "../../../../test_utils/expectError";
 import { api } from "../../../test_utils/api";
 import { getConnection } from "../../../test_utils/getConnection";
@@ -11,6 +10,10 @@ describe("claimPermissions", () => {
 
   beforeAll(async () => {
     connection = await getConnection("polkadot");
+  });
+
+  afterAll(() => {
+    connection.disconnect();
   });
 
   it("should get real pool claimPermissions", async () => {

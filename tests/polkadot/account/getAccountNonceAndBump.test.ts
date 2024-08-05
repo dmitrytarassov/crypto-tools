@@ -12,6 +12,10 @@ describe("getAccountNonceAndBump", () => {
     connection = await getConnection("polkadot");
   });
 
+  afterAll(() => {
+    connection.disconnect();
+  });
+
   it("should return nonce for real account", async () => {
     const [nonce, bump] = await getAccountNonceAndBump(
       connection,

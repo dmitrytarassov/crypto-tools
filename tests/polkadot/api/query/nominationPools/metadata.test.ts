@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it } from "@jest/globals";
+import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { ApiPromise } from "@polkadot/api";
 
 import { expectError } from "../../../../test_utils/expectError";
@@ -10,6 +10,10 @@ describe("metadata", () => {
 
   beforeAll(async () => {
     connection = await getConnection("polkadot");
+  });
+
+  afterAll(() => {
+    connection.disconnect();
   });
 
   it("should get real pool metadata", async () => {

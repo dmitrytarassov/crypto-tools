@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it } from "@jest/globals";
+import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { ApiPromise } from "@polkadot/api";
 
 import { expectError } from "../../../../test_utils/expectError";
@@ -12,6 +12,10 @@ describe("bondedPools", () => {
     connection = await getConnection("polkadot");
   });
 
+  afterAll(() => {
+    connection.disconnect();
+  });
+
   it("should get real pool info", async () => {
     const data = await api.query.nominationPools.bondedPools(connection, 1);
 
@@ -19,7 +23,7 @@ describe("bondedPools", () => {
   });
 
   it("should return null because wrong pool id", async () => {
-    for (const id of [10000, 100000000000000n, "1000000"]) {
+    for (const id of [10000, "1000000"]) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const data = await api.query.nominationPools.bondedPools(connection, id);

@@ -13,6 +13,10 @@ describe("getAccountNonce", () => {
     connection = await getConnection("polkadot");
   });
 
+  afterAll(() => {
+    connection.disconnect();
+  });
+
   it("should return nonce for real account", async () => {
     const nonce = await getAccountNonce(connection, polkadotAccount);
     expect(typeof nonce).toEqual("number");
