@@ -80,12 +80,28 @@ async function bondedPools(apiPromise, poolId) {
   const data = await apiPromise.query.nominationPools.bondedPools(poolId);
   return data.toJSON();
 }
+bondedPools.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.bondedPools.entries();
+  const result = [];
+  data.forEach(([poolId, data2]) => {
+    result.push([+poolId.toHuman()[0], data2.toHuman()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/claimPermissions.ts
 async function claimPermissions(apiPromise, address) {
   const data = await apiPromise.query.nominationPools.claimPermissions(address);
   return data.toJSON();
 }
+claimPermissions.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.claimPermissions.entries();
+  const result = [];
+  data.forEach(([address, data2]) => {
+    result.push([address.toHuman()[0], data2.toJSON()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/counterForBondedPools.ts
 async function counterForBondedPools(apiPromise) {
@@ -156,8 +172,16 @@ async function maxPools(apiPromise) {
 // src/polkadot/api/query/nominationPools/metadata.ts
 async function metadata(apiPromise, poolId) {
   const data = await apiPromise.query.nominationPools.metadata(poolId);
-  return data.toJSON();
+  return data.toHuman();
 }
+metadata.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.metadata.entries();
+  const result = [];
+  data.forEach(([poolId, data2]) => {
+    result.push([+poolId.toHuman()[0], data2.toHuman()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/minCreateBond.ts
 async function minCreateBond(apiPromise) {
@@ -186,6 +210,14 @@ async function poolMembers(apiPromise, address) {
   const data = await apiPromise.query.nominationPools.poolMembers(address);
   return data.toJSON();
 }
+poolMembers.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.poolMembers.entries();
+  const result = [];
+  data.forEach(([address, data2]) => {
+    result.push([+address.toHuman()[0], data2.toJSON()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/reversePoolIdLookup.ts
 async function reversePoolIdLookup(apiPromise, address) {
@@ -194,18 +226,42 @@ async function reversePoolIdLookup(apiPromise, address) {
   );
   return data.toJSON();
 }
+reversePoolIdLookup.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.reversePoolIdLookup.entries();
+  const result = [];
+  data.forEach(([address, poolId]) => {
+    result.push([address.toHuman()[0], +poolId.toJSON()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/rewardPools.ts
 async function rewardPools(apiPromise, poolId) {
   const data = await apiPromise.query.nominationPools.rewardPools(poolId);
   return data.toJSON();
 }
+rewardPools.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.rewardPools.entries();
+  const result = [];
+  data.forEach(([pool, value]) => {
+    result.push([+pool.toHuman()[0], value.toJSON()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/subPoolsStorage.ts
 async function subPoolsStorage(apiPromise, poolId) {
   const data = await apiPromise.query.nominationPools.subPoolsStorage(poolId);
   return data.toJSON();
 }
+subPoolsStorage.entries = async function(apiPromise) {
+  const data = await apiPromise.query.nominationPools.subPoolsStorage.entries();
+  const result = [];
+  data.forEach(([pool, value]) => {
+    result.push([+pool.toHuman()[0], value.toJSON()]);
+  });
+  return result;
+};
 
 // src/polkadot/api/query/nominationPools/totalValueLocked.ts
 async function totalValueLocked(apiPromise) {

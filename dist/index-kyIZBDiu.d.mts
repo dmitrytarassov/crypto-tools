@@ -78,13 +78,27 @@ type Nomination_Pools_Bonded_Pools_Json = {
         bouncer: string;
     };
     state: "Open" | "Destroying" | "Blocked";
-} | null;
-declare function bondedPools(apiPromise: ApiPromise, poolId: number): Promise<Nomination_Pools_Bonded_Pools_Json>;
+};
+declare function bondedPools(apiPromise: ApiPromise, poolId: number): Promise<Nomination_Pools_Bonded_Pools_Json | null>;
+declare namespace bondedPools {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Bonded_Pools_Entries>;
+}
+type Nomination_Pools_Bonded_Pools_Entries = [
+    number,
+    Nomination_Pools_Bonded_Pools_Json
+][];
 
 type ClaimPermission = "Permissioned" | "PermissionlessCompound" | "PermissionlessWithdraw" | "PermissionlessAll";
 
 type Nomination_Pools_Claim_Permission_Json = ClaimPermission;
 declare function claimPermissions(apiPromise: ApiPromise, address: string): Promise<Nomination_Pools_Claim_Permission_Json>;
+declare namespace claimPermissions {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Claim_Permission_Entries>;
+}
+type Nomination_Pools_Claim_Permission_Entries = [
+    string,
+    ClaimPermission
+][];
 
 type Nomination_Pools_Counter_For_Bonded_Pools_Json = number;
 declare function counterForBondedPools(apiPromise: ApiPromise): Promise<Nomination_Pools_Counter_For_Bonded_Pools_Json>;
@@ -121,6 +135,10 @@ declare function maxPools(apiPromise: ApiPromise): Promise<Nomination_Pools_Max_
 
 type Nomination_Pools_Metadata_Json = string;
 declare function metadata(apiPromise: ApiPromise, poolId: number): Promise<Nomination_Pools_Metadata_Json>;
+declare namespace metadata {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Metadata_Entries>;
+}
+type Nomination_Pools_Metadata_Entries = [number, string][];
 
 type Nomination_Pools_Min_Create_Bond_Json = number | null;
 declare function minCreateBond(apiPromise: ApiPromise): Promise<Nomination_Pools_Min_Create_Bond_Json>;
@@ -137,9 +155,23 @@ type Nomination_Pools_Pool_Members_Json = {
     unbondingEras: Record<string, BrokenNumberType>;
 } | null;
 declare function poolMembers(apiPromise: ApiPromise, address: string): Promise<Nomination_Pools_Pool_Members_Json>;
+declare namespace poolMembers {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Pool_Members_Entries>;
+}
+type Nomination_Pools_Pool_Members_Entries = [
+    number,
+    Nomination_Pools_Pool_Members_Json
+][];
 
 type Nomination_Pools_Reverse_Pool_Id_Lookup_Json = number | null;
 declare function reversePoolIdLookup(apiPromise: ApiPromise, address: string): Promise<Nomination_Pools_Reverse_Pool_Id_Lookup_Json>;
+declare namespace reversePoolIdLookup {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Reverse_Pool_Id_Lookup_Entries>;
+}
+type Nomination_Pools_Reverse_Pool_Id_Lookup_Entries = [
+    string,
+    number
+][];
 
 type Nomination_Pools_Reward_Pools_Json = {
     lastRecordedRewardCounter: BrokenNumberType;
@@ -149,6 +181,13 @@ type Nomination_Pools_Reward_Pools_Json = {
     totalCommissionClaimed: BrokenNumberType;
 } | null;
 declare function rewardPools(apiPromise: ApiPromise, poolId: number): Promise<Nomination_Pools_Reward_Pools_Json>;
+declare namespace rewardPools {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Reward_Pools_Entries>;
+}
+type Nomination_Pools_Reward_Pools_Entries = [
+    number,
+    Nomination_Pools_Reward_Pools_Json
+][];
 
 type Nomination_Pools_Sub_Pools_Storage_Json = {
     noEra: {
@@ -161,6 +200,13 @@ type Nomination_Pools_Sub_Pools_Storage_Json = {
     }>;
 } | null;
 declare function subPoolsStorage(apiPromise: ApiPromise, poolId: number): Promise<Nomination_Pools_Sub_Pools_Storage_Json>;
+declare namespace subPoolsStorage {
+    var entries: (apiPromise: ApiPromise) => Promise<Nomination_Pools_Sub_Pools_Storage_Entries>;
+}
+type Nomination_Pools_Sub_Pools_Storage_Entries = [
+    number,
+    Nomination_Pools_Sub_Pools_Storage_Json
+][];
 
 type Nomination_Pools_Global_Max_Commission_Json = BrokenNumberType;
 declare function totalValueLocked(apiPromise: ApiPromise): Promise<Nomination_Pools_Global_Max_Commission_Json>;

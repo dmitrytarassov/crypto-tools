@@ -19,13 +19,20 @@ describe("metadata", () => {
     expect(data.length > 2).toBeTruthy();
   });
 
+  it("should get real pool metadata as string description", async () => {
+    const data = await api.query.nominationPools.metadata(connection, 173);
+
+    expect(data.startsWith("0x")).toBeFalsy();
+    expect(typeof data === "string").toBeTruthy();
+  });
+
   it("should return 0x because wrong pool id", async () => {
     for (const id of [10000, "1000000"]) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const data = await api.query.nominationPools.metadata(connection, id);
 
-      expect(data).toEqual("0x");
+      expect(data).toEqual("");
     }
   });
 

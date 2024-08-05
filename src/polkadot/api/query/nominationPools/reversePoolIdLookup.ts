@@ -12,3 +12,25 @@ export async function reversePoolIdLookup(
 
   return data.toJSON() as any as Nomination_Pools_Reverse_Pool_Id_Lookup_Json;
 }
+
+export type Nomination_Pools_Reverse_Pool_Id_Lookup_Entries = [
+  string,
+  number
+][];
+
+reversePoolIdLookup.entries = async function (
+  apiPromise: ApiPromise
+): Promise<Nomination_Pools_Reverse_Pool_Id_Lookup_Entries> {
+  const data =
+    await apiPromise.query.nominationPools.reversePoolIdLookup.entries();
+
+  const result: Nomination_Pools_Reverse_Pool_Id_Lookup_Entries = [];
+
+  data.forEach(([address, poolId]) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    result.push([address.toHuman()[0], +poolId.toJSON()]);
+  });
+
+  return result;
+};

@@ -12,3 +12,25 @@ export async function claimPermissions(
 
   return data.toJSON() as any as Nomination_Pools_Claim_Permission_Json;
 }
+
+export type Nomination_Pools_Claim_Permission_Entries = [
+  string,
+  ClaimPermission
+][];
+
+claimPermissions.entries = async function (
+  apiPromise: ApiPromise
+): Promise<Nomination_Pools_Claim_Permission_Entries> {
+  const data =
+    await apiPromise.query.nominationPools.claimPermissions.entries();
+
+  const result: Nomination_Pools_Claim_Permission_Entries = [];
+
+  data.forEach(([address, data]) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    result.push([address.toHuman()[0], data.toJSON()]);
+  });
+
+  return result;
+};
