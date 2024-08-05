@@ -1,7 +1,3 @@
-import { ApiPromise } from "@polkadot/api";
+import { palletVersionBase } from "../helpers/palletVersionBase";
 
-export async function palletVersion(apiPromise: ApiPromise): Promise<number> {
-  return (
-    await apiPromise.query.system.palletVersion()
-  ).toJSON() as unknown as number;
-}
+export const palletVersion = palletVersionBase("system");
