@@ -2,6 +2,9 @@ import { ApiPromise } from "@polkadot/api";
 
 export type Nomination_Pools_Reverse_Pool_Id_Lookup_Json = number | null; // always null
 
+/*
+ * A reverse lookup from the pool's account id to its id.
+ */
 export async function reversePoolIdLookup(
   apiPromise: ApiPromise,
   address: string

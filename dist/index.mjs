@@ -502,4 +502,3 @@ export {
   common,
   polkadot
 };
-//# sourceMappingURL=index.mjs.map

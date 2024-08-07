@@ -2,6 +2,9 @@ import { ApiPromise } from "@polkadot/api";
 
 export type Nomination_Pools_Counter_For_Bonded_Pools_Json = number;
 
+/*
+ *Counter for the related counted storage map
+ */
 export async function counterForBondedPools(
   apiPromise: ApiPromise
 ): Promise<Nomination_Pools_Counter_For_Bonded_Pools_Json> {

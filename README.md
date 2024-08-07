@@ -12,16 +12,22 @@
 - [delegationManagerContract](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#delegationmanagercontract) - get delegationManagerContract contract instance
 
 ## [Polkadot](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md)
-### Account
+### api.query
+The universal typed wrapper for polkadot ApiPromise.
+#### Pallets:
+- [api.query.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/nominationPools/README.md)
+
+### Tools
+#### Account
 - [getAccountData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountdata) - get account info, like balances, nonce, etc...
 - [getAccountNonce](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountnonce) - get account current nonce
 - [getAccountNonceAndBump](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getaccountnonceandbump) - get account current nonce and bump function
 
-### Staking
+#### Staking
 - [getActiveEra | getCurrentEra](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getactiveera) - get active era number
 - [getController](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getcontroller) - get staking controller, for stash account
 - [getLedgerData](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#getledgerdata) - get staking data, like bonded / unbonded, rewards eras...
 - [getErasRewardPoints](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#geterasrewardpoints) - get reward points for the selected era
 
-### Common tools
+#### Common tools
 - [polkadotExplorerUrl](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#polkadotexplorerurl) - get explorer url by network, type and hex data

@@ -525,4 +525,3 @@ var common = common_exports;
   common,
   polkadot
 });
-//# sourceMappingURL=index.js.map

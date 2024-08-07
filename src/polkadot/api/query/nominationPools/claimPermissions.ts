@@ -4,6 +4,9 @@ import { ClaimPermission } from "./types";
 
 export type Nomination_Pools_Claim_Permission_Json = ClaimPermission;
 
+/*
+ * Map from a pool member account to their opted claim permission.
+ */
 export async function claimPermissions(
   apiPromise: ApiPromise,
   address: string

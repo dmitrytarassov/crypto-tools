@@ -2,6 +2,9 @@ import { ApiPromise } from "@polkadot/api";
 
 export type Nomination_Pools_Metadata_Json = string;
 
+/*
+ * Metadata for the pool.
+ */
 export async function metadata(
   apiPromise: ApiPromise,
   poolId: number

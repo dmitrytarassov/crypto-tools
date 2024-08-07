@@ -12,6 +12,9 @@ export type Nomination_Pools_Reward_Pools_Json = {
   totalCommissionClaimed: BrokenNumberType;
 } | null;
 
+/*
+ * Reward pools. This is where there rewards for each pool accumulate. When a members payout is
+ */
 export async function rewardPools(
   apiPromise: ApiPromise,
   poolId: number

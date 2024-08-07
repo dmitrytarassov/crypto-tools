@@ -21,6 +21,9 @@ export type Nomination_Pools_Bonded_Pools_Json = {
   state: "Open" | "Destroying" | "Blocked";
 };
 
+/*
+ * Storage for bonded pools.
+ */
 export async function bondedPools(
   apiPromise: ApiPromise,
   poolId: number

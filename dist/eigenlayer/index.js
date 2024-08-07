@@ -1932,4 +1932,3 @@ function delegationManagerContract(signerOrProvider, delegationManagerContract2 
   delegationManagerContract,
   getOperatorDelegatorsHistory
 });
-//# sourceMappingURL=index.js.map

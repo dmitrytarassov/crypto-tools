@@ -6,7 +6,7 @@
     "eigenlayer"
   ],
   "name": "common-crypto-tools",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "@microsoft/api-extractor": "^7.43.0",
     "@typechain/ethers-v5": "^11.1.2",
     "@types/express": "^4.17.21",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/sha256": "^0.2.2",
     "@types/supertest": "^6.0.2",
@@ -52,9 +53,10 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
     "jest": "^29.7.0",
+    "jsdom": "^24.1.1",
     "prettier": "^2.8.8",
-    "typechain": "^8.3.2",
     "ts-jest": "^29.2.4",
-    "tsup": "^8.2.4"
+    "tsup": "^8.2.4",
+    "typechain": "^8.3.2"
   }
 }

@@ -4,6 +4,9 @@ import { BrokenNumberType } from "../types/BrokenNumberType";
 
 export type Nomination_Pools_Global_Max_Commission_Json = BrokenNumberType;
 
+/*
+ * The sum of funds across all pools.
+ */
 export async function totalValueLocked(
   apiPromise: ApiPromise
 ): Promise<Nomination_Pools_Global_Max_Commission_Json> {

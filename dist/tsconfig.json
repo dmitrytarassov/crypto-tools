@@ -24,5 +24,12 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
   },
-  "include": ["./src/*.ts", "./src/**/*.ts", "./tests/*.ts", "./tests/**/*.ts", "tsup.config.ts"]
+  "include": [
+    "./src/*.ts",
+    "./src/**/*.ts",
+    "./utils/**/*.ts",
+    "./tests/*.ts",
+    "./tests/**/*.ts",
+    "tsup.config.ts"
+  ]
 }

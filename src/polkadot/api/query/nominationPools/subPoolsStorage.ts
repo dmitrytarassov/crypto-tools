@@ -16,6 +16,9 @@ export type Nomination_Pools_Sub_Pools_Storage_Json = {
   >;
 } | null;
 
+/*
+ * Groups of unbonding pools. Each group of unbonding pools belongs to a
+ */
 export async function subPoolsStorage(
   apiPromise: ApiPromise,
   poolId: number

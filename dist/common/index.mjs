@@ -60,4 +60,3 @@ export {
   removeLeading0x,
   toBigNumber
 };
-//# sourceMappingURL=index.mjs.map

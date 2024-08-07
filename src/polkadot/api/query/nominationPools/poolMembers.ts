@@ -11,6 +11,9 @@ export type Nomination_Pools_Pool_Members_Json = {
   unbondingEras: Record<string, BrokenNumberType>;
 } | null;
 
+/*
+ * Active members.
+ */
 export async function poolMembers(
   apiPromise: ApiPromise,
   address: string

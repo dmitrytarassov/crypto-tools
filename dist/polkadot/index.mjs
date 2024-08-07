@@ -424,4 +424,3 @@ export {
   getLedgerData,
   polkadotExplorerUrl
 };
-//# sourceMappingURL=index.mjs.map

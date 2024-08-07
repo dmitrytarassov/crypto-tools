@@ -89,4 +89,3 @@ function removeLeading0x(data) {
   removeLeading0x,
   toBigNumber
 });
-//# sourceMappingURL=index.js.map

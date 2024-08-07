@@ -454,4 +454,3 @@ var getCurrentEra = getActiveEra;
   getLedgerData,
   polkadotExplorerUrl
 });
-//# sourceMappingURL=index.js.map
