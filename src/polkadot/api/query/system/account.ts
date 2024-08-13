@@ -1,6 +1,6 @@
 import { ApiPromise } from "@polkadot/api";
 
-export type Staking_Account_Json = {
+export type System_Account_Json = {
   nonce: number;
   consumers: number;
   providers: number;
@@ -16,8 +16,8 @@ export type Staking_Account_Json = {
 export async function account(
   apiPromise: ApiPromise,
   address: string
-): Promise<Staking_Account_Json | null> {
+): Promise<System_Account_Json | null> {
   const data = await apiPromise.query.system.account(address);
 
-  return data.toJSON() as unknown as Staking_Account_Json | null;
+  return data.toJSON() as unknown as System_Account_Json | null;
 }
