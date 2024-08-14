@@ -1,13 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Proxy_Proxies_Json = [
-  {
-    delegate: string;
-    proxyType: "Any" | "NonTransfer" | "Governance" | "Staking";
-    delay: number;
-  }[],
-  number
-];
+import { Proxy_Proxies_Json } from "@polkadot/types/api/query/proxy";
 
 export async function proxies(
   apiPromise: ApiPromise,

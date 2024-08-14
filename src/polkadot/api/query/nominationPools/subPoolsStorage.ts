@@ -1,20 +1,8 @@
 import { ApiPromise } from "@polkadot/api";
-
-import { BrokenNumberType } from "../types/BrokenNumberType";
-
-export type Nomination_Pools_Sub_Pools_Storage_Json = {
-  noEra: {
-    points: BrokenNumberType;
-    balance: BrokenNumberType;
-  };
-  withEra: Record<
-    number,
-    {
-      points: BrokenNumberType;
-      balance: BrokenNumberType;
-    }
-  >;
-} | null;
+import {
+  Nomination_Pools_Sub_Pools_Storage_Entries,
+  Nomination_Pools_Sub_Pools_Storage_Json,
+} from "@polkadot/types/api/query/nominationPools";
 
 /*
  * Groups of unbonding pools. Each group of unbonding pools belongs to a
@@ -27,11 +15,6 @@ export async function subPoolsStorage(
 
   return data.toJSON() as any as Nomination_Pools_Sub_Pools_Storage_Json;
 }
-
-export type Nomination_Pools_Sub_Pools_Storage_Entries = [
-  number,
-  Nomination_Pools_Sub_Pools_Storage_Json
-][];
 
 subPoolsStorage.entries = async function (
   apiPromise: ApiPromise

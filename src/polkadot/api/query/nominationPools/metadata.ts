@@ -1,6 +1,8 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Nomination_Pools_Metadata_Json = string;
+import {
+  Nomination_Pools_Metadata_Json,
+  Nomination_Pools_Metadata_Entries,
+} from "@polkadot/types/api/query/nominationPools";
 
 /*
  * Metadata for the pool.
@@ -13,8 +15,6 @@ export async function metadata(
 
   return data.toHuman() as unknown as Nomination_Pools_Metadata_Json;
 }
-
-export type Nomination_Pools_Metadata_Entries = [number, string][];
 
 metadata.entries = async function (
   apiPromise: ApiPromise

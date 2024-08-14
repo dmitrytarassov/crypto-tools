@@ -1,12 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Staking_Ledger_Json = {
-  stash: string;
-  total: number;
-  active: number;
-  unlocking: string[];
-  legacyClaimedRewards: number[];
-};
+import { Staking_Ledger_Json } from "@polkadot/types/api/query/staking";
 
 export async function ledger(
   apiPromise: ApiPromise,

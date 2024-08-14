@@ -1,6 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Nomination_Pools_Min_Create_Bond_Json = number | null;
+import { Nomination_Pools_Min_Create_Bond_Json } from "@polkadot/types/api/query/nominationPools";
 
 /*
  * Minimum bond required to create a pool.

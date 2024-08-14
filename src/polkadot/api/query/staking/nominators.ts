@@ -1,10 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Staking_Nominators_Json = {
-  targets: string[];
-  submittedIn: number;
-  suppressed: boolean;
-};
+import { Staking_Nominators_Json } from "@polkadot/types/api/query/staking";
 
 export async function nominators(
   apiPromise: ApiPromise,

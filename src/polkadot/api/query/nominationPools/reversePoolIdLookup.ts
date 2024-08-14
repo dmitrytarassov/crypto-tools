@@ -1,6 +1,8 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Nomination_Pools_Reverse_Pool_Id_Lookup_Json = number | null; // always null
+import {
+  Nomination_Pools_Reverse_Pool_Id_Lookup_Json,
+  Nomination_Pools_Reverse_Pool_Id_Lookup_Entries,
+} from "@polkadot/types/api/query/nominationPools";
 
 /*
  * A reverse lookup from the pool's account id to its id.
@@ -15,11 +17,6 @@ export async function reversePoolIdLookup(
 
   return data.toJSON() as any as Nomination_Pools_Reverse_Pool_Id_Lookup_Json;
 }
-
-export type Nomination_Pools_Reverse_Pool_Id_Lookup_Entries = [
-  string,
-  number
-][];
 
 reversePoolIdLookup.entries = async function (
   apiPromise: ApiPromise

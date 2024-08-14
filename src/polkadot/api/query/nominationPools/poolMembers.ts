@@ -1,16 +1,6 @@
 import { ApiPromise } from "@polkadot/api";
-
-import { Nomination_Pools_Reverse_Pool_Id_Lookup_Entries } from "./reversePoolIdLookup";
-
-import { BrokenNumberType } from "../types/BrokenNumberType";
-
-export type Nomination_Pools_Pool_Members_Json = {
-  poolId: number;
-  points: number;
-  lastRecordedRewardCounter: BrokenNumberType;
-  unbondingEras: Record<string, BrokenNumberType>;
-} | null;
-
+import { Nomination_Pools_Pool_Members_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Pool_Members_Entries } from "@polkadot/types/api/query/nominationPools/poolMembers";
 /*
  * Active members.
  */
@@ -22,11 +12,6 @@ export async function poolMembers(
 
   return data.toJSON() as any as Nomination_Pools_Pool_Members_Json;
 }
-
-export type Nomination_Pools_Pool_Members_Entries = [
-  number,
-  Nomination_Pools_Pool_Members_Json
-][];
 
 poolMembers.entries = async function (
   apiPromise: ApiPromise

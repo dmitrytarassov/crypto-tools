@@ -1,9 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Staking_Active_Era_Json = {
-  index: number;
-  start: number;
-};
+import { Staking_Active_Era_Json } from "@polkadot/types/api/query/staking";
 
 export const activeEra = async (
   api: ApiPromise

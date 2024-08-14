@@ -1,8 +1,11 @@
 import { ApiPromise } from "@polkadot/api";
+import { Staking_Ledger_Json } from "@polkadot/types/api/query/staking";
 
 import * as api from "../api";
-import { Staking_Ledger_Json } from "../api/query/staking/ledger";
 
+/**
+ * @deprecated The method should not be used
+ */
 export async function getLedgerData(
   apiPromise: ApiPromise,
   address: string

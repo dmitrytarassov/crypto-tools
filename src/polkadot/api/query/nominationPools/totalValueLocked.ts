@@ -1,8 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-import { BrokenNumberType } from "../types/BrokenNumberType";
-
-export type Nomination_Pools_Global_Max_Commission_Json = BrokenNumberType;
+import { Nomination_Pools_Global_Max_Commission_Json } from "@polkadot/types/api/query/nominationPools";
 
 /*
  * The sum of funds across all pools.

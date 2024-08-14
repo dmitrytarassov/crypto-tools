@@ -22,7 +22,10 @@
     "incremental": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@polkadot/types/*": ["./src/types/polkadot/*"]
+    }
   },
   "include": [
     "./src/*.ts",

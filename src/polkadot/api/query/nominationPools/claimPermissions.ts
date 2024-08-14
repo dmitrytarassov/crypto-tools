@@ -1,8 +1,8 @@
 import { ApiPromise } from "@polkadot/api";
-
-import { ClaimPermission } from "./types";
-
-export type Nomination_Pools_Claim_Permission_Json = ClaimPermission;
+import {
+  ClaimPermission,
+  Nomination_Pools_Claim_Permission_Json,
+} from "@polkadot/types/api/query/nominationPools";
 
 /*
  * Map from a pool member account to their opted claim permission.
