@@ -1,0 +1,1 @@
+export type Nomination_Pools_Counter_For_Reverse_Pool_Id_Lookup_Json = number;

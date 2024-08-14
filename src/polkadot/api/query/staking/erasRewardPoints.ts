@@ -1,11 +1,6 @@
 import { ApiPromise } from "@polkadot/api";
+import { Staking_Eras_Reward_Points_Json } from "@polkadot/types/api/query/staking";
 
-export type Staking_Eras_Reward_Points_Json = {
-  total: number;
-  individual: {
-    [validator: string]: number;
-  };
-};
 export async function erasRewardPoints(
   apiPromise: ApiPromise,
   era: number

@@ -1,0 +1,1 @@
+export type Nomination_Pools_Counter_For_Sub_Pools_Storage_Json = number;

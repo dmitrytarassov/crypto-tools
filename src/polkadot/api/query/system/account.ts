@@ -1,17 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type System_Account_Json = {
-  nonce: number;
-  consumers: number;
-  providers: number;
-  sufficients: number;
-  data: {
-    free: string;
-    reserved: number;
-    frozen: string;
-    flags: string;
-  };
-};
+import { System_Account_Json } from "@polkadot/types/api/query/system";
 
 export async function account(
   apiPromise: ApiPromise,

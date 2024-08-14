@@ -1,0 +1,1 @@
+export type Nomination_Pools_Counter_For_Reward_Pools_Json = number;

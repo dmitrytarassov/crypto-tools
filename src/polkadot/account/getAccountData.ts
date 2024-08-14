@@ -1,8 +1,11 @@
 import { ApiPromise } from "@polkadot/api";
+import { System_Account_Json } from "@polkadot/types/api/query/system";
 
 import * as api from "../api";
-import { System_Account_Json } from "../api/query/system/account";
 
+/**
+ * @deprecated The method should not be used
+ */
 export async function getAccountData(
   apiPromise: ApiPromise,
   address: string

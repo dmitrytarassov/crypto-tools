@@ -1,6 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-
-export type Nomination_Pools_Counter_For_Sub_Pools_Storage_Json = number;
+import { Nomination_Pools_Counter_For_Sub_Pools_Storage_Json } from "@polkadot/types/api/query/nominationPools";
 
 /*
  *Counter for the related counted storage map
