@@ -1,7 +1,7 @@
 import { ApiPromise } from "@polkadot/api";
+import { Staking_Active_Era_Json } from "@polkadot/types/api/query/staking";
 
 import * as api from "../api";
-import { Staking_Active_Era_Json } from "../api/query/staking/activeEra";
 
 export const getActiveEra = async (
   apiPromise: ApiPromise
