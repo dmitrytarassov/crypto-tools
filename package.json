@@ -6,7 +6,7 @@
     "eigenlayer"
   ],
   "name": "common-crypto-tools",
-  "version": "0.5.3",
+  "version": "0.6.2",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
