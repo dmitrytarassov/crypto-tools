@@ -8,15 +8,14 @@
 - [toBigNumber](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_number) - transform any digital value to `BigNumber`
 - [toBigFloat](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_float) - transform any digital value to floated `BigNumber`
 
-# [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)
-- [getOperatorDelegatorsHistory](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
-- [delegationManagerContract](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#delegationmanagercontract) - get delegationManagerContract contract instance
-
 ## [Polkadot](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md)
-### api.query
+### api
 The universal typed wrapper for polkadot ApiPromise.
+
 #### Pallets:
 - [api.query.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/nominationPools/README.md)
+- [api.query.system](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/system/README.md)
+- [api.query.timestamp](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/timestamp/README.md)
 
 ### Tools
 #### Account
@@ -33,3 +32,7 @@ The universal typed wrapper for polkadot ApiPromise.
 #### Common tools
 - [polkadotExplorerUrl](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#polkadotexplorerurl) - get explorer url by network, type and hex data
 - [awaitTransaction](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#awaitTransaction) - await transaction execution and observe transaction status
+
+## [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)
+- [getOperatorDelegatorsHistory](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
+- [delegationManagerContract](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#delegationmanagercontract) - get delegationManagerContract contract instance

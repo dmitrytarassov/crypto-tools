@@ -1,6 +1,9 @@
 import { ApiPromise } from "@polkadot/api";
 import { System_Account_Json } from "@polkadotTypes/api/query/system";
 
+/*
+ * The full account information for a particular account ID.
+ */
 export async function account(
   apiPromise: ApiPromise,
   address: string

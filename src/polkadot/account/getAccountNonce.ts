@@ -10,7 +10,7 @@ export async function getAccountNonce(
   apiPromise: ApiPromise,
   account: string
 ): Promise<number> {
-  return api.query.system.accountNextIndex(apiPromise, account);
+  return api.rpc.system.accountNextIndex(apiPromise, account);
 }
 
 export async function getAccountNonceAndBump(

@@ -1,9 +1,12 @@
 # The list of tools and interfaces for Polkadot Web3 Libraries
 
-## api.query
+## api
 The universal typed wrapper for polkadot ApiPromise.
+
 ### Pallets:
 - [api.query.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/nominationPools/README.md)
+- [api.query.system](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/system/README.md)
+- [api.query.timestamp](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/api/query/timestamp/README.md)
 
 ## Tools:
 
