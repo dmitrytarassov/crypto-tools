@@ -1,4 +1,4 @@
-import { BrokenNumberType } from "@polkadot/types/common/BrokenNumberType";
+import { BrokenNumberType } from "@polkadotTypes/common/BrokenNumberType";
 
 export type Staking_Ledger_Json = {
   stash: string;

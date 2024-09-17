@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Global_Max_Commission_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Global_Max_Commission_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * The maximum commission that can be charged by a pool. Used on commission payouts to bound

@@ -2,7 +2,7 @@ import { ApiPromise } from "@polkadot/api";
 import {
   Nomination_Pools_Sub_Pools_Storage_Entries,
   Nomination_Pools_Sub_Pools_Storage_Json,
-} from "@polkadot/types/api/query/nominationPools";
+} from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Groups of unbonding pools. Each group of unbonding pools belongs to a

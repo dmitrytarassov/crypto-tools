@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Proxy_Proxies_Json } from "@polkadot/types/api/query/proxy";
+import { Proxy_Proxies_Json } from "@polkadotTypes/api/query/proxy";
 
 export async function proxies(
   apiPromise: ApiPromise,

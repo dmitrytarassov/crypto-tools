@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Max_Pools_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Max_Pools_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Maximum number of nomination pools that can exist. If `None`, then an unbounded number of

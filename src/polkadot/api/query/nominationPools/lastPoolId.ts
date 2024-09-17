@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Last_Pool_Id_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Last_Pool_Id_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Ever increasing number of all pools created so far.

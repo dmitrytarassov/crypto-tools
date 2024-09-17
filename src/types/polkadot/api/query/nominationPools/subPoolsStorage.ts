@@ -1,4 +1,4 @@
-import { BrokenNumberType } from "@polkadot/types/common/BrokenNumberType";
+import { BrokenNumberType } from "@polkadotTypes/common/BrokenNumberType";
 
 export type Nomination_Pools_Sub_Pools_Storage_Json = {
   noEra: {

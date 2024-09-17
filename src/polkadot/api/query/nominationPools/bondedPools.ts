@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { BrokenNumberType } from "@polkadot/types/common/BrokenNumberType";
+import { BrokenNumberType } from "@polkadotTypes/common/BrokenNumberType";
 
 export type Nomination_Pools_Bonded_Pools_Json = {
   commission: {

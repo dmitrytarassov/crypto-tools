@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Counter_For_Reward_Pools_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Counter_For_Reward_Pools_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  *Counter for the related counted storage map

@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Staking_Eras_Reward_Points_Json } from "@polkadot/types/api/query/staking";
+import { Staking_Eras_Reward_Points_Json } from "@polkadotTypes/api/query/staking";
 
 import * as api from "../api";
 

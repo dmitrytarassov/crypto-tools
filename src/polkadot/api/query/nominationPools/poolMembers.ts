@@ -1,6 +1,6 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Pool_Members_Json } from "@polkadot/types/api/query/nominationPools";
-import { Nomination_Pools_Pool_Members_Entries } from "@polkadot/types/api/query/nominationPools/poolMembers";
+import { Nomination_Pools_Pool_Members_Json } from "@polkadotTypes/api/query/nominationPools";
+import { Nomination_Pools_Pool_Members_Entries } from "@polkadotTypes/api/query/nominationPools/poolMembers";
 /*
  * Active members.
  */

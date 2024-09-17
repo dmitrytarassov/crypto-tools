@@ -2,7 +2,7 @@ import { ApiPromise } from "@polkadot/api";
 import {
   Nomination_Pools_Reverse_Pool_Id_Lookup_Json,
   Nomination_Pools_Reverse_Pool_Id_Lookup_Entries,
-} from "@polkadot/types/api/query/nominationPools";
+} from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * A reverse lookup from the pool's account id to its id.

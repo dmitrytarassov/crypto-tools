@@ -26,6 +26,7 @@ describe("getOperatorDelegatorsHistory", () => {
     });
 
     const realDelegator = "0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE";
+    console.log(data.get(realDelegator.toLowerCase()));
     const realDelegations: string[] = [
       ["19388606404441598", 19676121, OperatorSharesIncreasedAction],
       ["4847151601110399", 19677373, OperatorSharesIncreasedAction],

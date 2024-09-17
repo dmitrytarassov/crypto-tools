@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Min_Join_Bond_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Min_Join_Bond_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Minimum amount to bond to join a pool.

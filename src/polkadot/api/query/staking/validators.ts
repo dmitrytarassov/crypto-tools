@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Staking_Validators_Json } from "@polkadot/types/api/query/staking";
+import { Staking_Validators_Json } from "@polkadotTypes/api/query/staking";
 
 export async function validators(
   apiPromise: ApiPromise,

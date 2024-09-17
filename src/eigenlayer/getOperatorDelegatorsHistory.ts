@@ -63,6 +63,8 @@ async function getLogs(
 type OperatorReStakerAction = {
   amount: BigNumber;
   block: BigNumber;
+  awsOperator: string;
+  strategy: string;
   action:
     | typeof OperatorSharesDecreasedAction
     | typeof OperatorSharesIncreasedAction;
@@ -79,7 +81,10 @@ function parseLogs(
     const data = parseData(log.data);
 
     const staker = parseAddress(data[0]).toLowerCase();
+
     const stakerData = stakers.get(staker) || [];
+    const awsOperator = parseAddress(log.topics[1]);
+    const strategy = parseAddress(data[1]);
 
     stakers.set(staker, [
       ...stakerData,
@@ -87,6 +92,8 @@ function parseLogs(
         amount: toBigNumber(`0x${data[2]}`),
         block: toBigNumber(log.blockNumber),
         action,
+        strategy,
+        awsOperator,
       },
     ]);
   }

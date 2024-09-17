@@ -6,6 +6,7 @@
 - [abbreviateAddress](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#abbreviateaddress) - truncate address, like `0x387...dCE`
 - [removeLeading0x](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#removeleading0x) - remove leading 0x from string, useful for logs parsing `0x387...dCE` -> `387...dCE`
 - [toBigNumber](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_number) - transform any digital value to `BigNumber`
+- [toBigFloat](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/common/README.md#to_big_float) - transform any digital value to floated `BigNumber`
 
 # [EigenLayer](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md)
 - [getOperatorDelegatorsHistory](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/eigenlayer/README.md#getoperatordelegatorshistory) - history of increasing and decreasing restakes to operator
@@ -31,3 +32,4 @@ The universal typed wrapper for polkadot ApiPromise.
 
 #### Common tools
 - [polkadotExplorerUrl](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#polkadotexplorerurl) - get explorer url by network, type and hex data
+- [awaitTransaction](https://github.com/dmitrytarassov/crypto-tools/blob/main/src/polkadot/README.md#awaitTransaction) - await transaction execution and observe transaction status

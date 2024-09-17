@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Nomination_Pools_Max_Pool_Members_Per_Pool_Json } from "@polkadot/types/api/query/nominationPools";
+import { Nomination_Pools_Max_Pool_Members_Per_Pool_Json } from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Maximum number of members that may belong to pool. If `None`, then the count of

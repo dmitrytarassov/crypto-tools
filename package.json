@@ -6,7 +6,7 @@
     "eigenlayer"
   ],
   "name": "common-crypto-tools",
-  "version": "0.6.3",
+  "version": "0.8.2",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -21,9 +21,10 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@polkadot/api": "^12.3.1",
-    "@polkadot/types": "^12.3.1",
+    "@polkadot/api": "^13.0.1",
+    "@polkadot/types": "^13.0.1",
     "@polkadot/util-crypto": "^13.0.2",
+    "bignumber.js": "^9.1.2",
     "ethers": "^5.7.2",
     "ts-node": "10.9.2",
     "typescript": "5.5.4"

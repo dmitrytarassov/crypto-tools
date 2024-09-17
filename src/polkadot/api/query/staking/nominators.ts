@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { Staking_Nominators_Json } from "@polkadot/types/api/query/staking";
+import { Staking_Nominators_Json } from "@polkadotTypes/api/query/staking";
 
 export async function nominators(
   apiPromise: ApiPromise,

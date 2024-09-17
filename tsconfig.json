@@ -24,7 +24,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "paths": {
-      "@polkadot/types/*": ["./src/types/polkadot/*"]
+      "@polkadotTypes/*": ["./src/types/polkadot/*"]
     }
   },
   "include": [

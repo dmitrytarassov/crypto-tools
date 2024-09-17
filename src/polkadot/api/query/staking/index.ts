@@ -5,4 +5,5 @@ export { erasValidatorReward } from "./erasValidatorReward";
 export { ledger } from "./ledger";
 export { nominators } from "./nominators";
 export { palletVersion } from "./palletVersion";
+export { validatorCount } from "./validatorCount";
 export { validators } from "./validators";

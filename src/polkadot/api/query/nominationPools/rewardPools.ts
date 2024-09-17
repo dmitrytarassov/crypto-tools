@@ -2,7 +2,7 @@ import { ApiPromise } from "@polkadot/api";
 import {
   Nomination_Pools_Reward_Pools_Json,
   Nomination_Pools_Reward_Pools_Entries,
-} from "@polkadot/types/api/query/nominationPools";
+} from "@polkadotTypes/api/query/nominationPools";
 
 /*
  * Reward pools. This is where there rewards for each pool accumulate. When a members payout is

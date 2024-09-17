@@ -1,5 +1,5 @@
 import { ApiPromise } from "@polkadot/api";
-import { System_Account_Json } from "@polkadot/types/api/query/system";
+import { System_Account_Json } from "@polkadotTypes/api/query/system";
 
 export async function account(
   apiPromise: ApiPromise,
