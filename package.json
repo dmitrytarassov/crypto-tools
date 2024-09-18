@@ -1,12 +1,4 @@
 {
-  "keywords": [
-    "web3",
-    "polkadot",
-    "crypto",
-    "eigenlayer"
-  ],
-  "name": "common-crypto-tools",
-  "version": "0.9.0",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -15,20 +7,6 @@
   "files": [
     "./"
   ],
-  "scripts": {
-    "build": "tsup",
-    "generate:types:v5:DelegationManager": "typechain --target ethers-v5 --out-dir src/eigenlayer/contracts/typechain/ethers-v5/DelegationManager/ src/eigenlayer/contracts/abi/DelegationManager.json",
-    "test": "jest --coverage"
-  },
-  "dependencies": {
-    "@polkadot/api": "^13.0.1",
-    "@polkadot/types": "^13.0.1",
-    "@polkadot/util-crypto": "^13.0.2",
-    "bignumber.js": "^9.1.2",
-    "ethers": "^5.7.2",
-    "ts-node": "10.9.2",
-    "typescript": "5.5.4"
-  },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
     "@microsoft/api-extractor": "^7.43.0",

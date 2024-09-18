@@ -1,0 +1,30 @@
+{
+  "keywords": [
+    "web3",
+    "web3 tools",
+    "blockchain",
+    "crypto"
+  ],
+  "name": "common-crypto-tools",
+  "version": "1.0.0",
+  "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
+  "author": "Dmitriy Tarasov <meowbl@icloud.com>",
+  "license": "MIT",
+  "private": false,
+  "main": "./index.ts",
+  "files": [
+    "./"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "generate:types:v5:DelegationManager": "typechain --target ethers-v5 --out-dir src/eigenlayer/contracts/typechain/ethers-v5/DelegationManager/ src/eigenlayer/contracts/abi/DelegationManager.json",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.1.2",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^11.1.2"
+  }
+}

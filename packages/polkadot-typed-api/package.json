@@ -1,0 +1,30 @@
+{
+  "keywords": [
+    "web3",
+    "polkadot",
+    "polkadot api",
+    "polkadot types"
+  ],
+  "name": "polkadot-typed-api",
+  "main": "src/index.ts",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
+  "author": "Dmitriy Tarasov <meowbl@icloud.com>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "./"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@polkadot/api": "^13.0.1",
+    "tsup": "^8.2.4"
+  },
+  "dependencies": {
+    "common-crypto-tools": "^0.9.0"
+  }
+}

@@ -28,8 +28,8 @@
     }
   },
   "include": [
-    "./src/*.ts",
-    "./src/**/*.ts",
+    "./packages/common-crypto-tools/src/*.ts",
+    "./packages/common-crypto-tools/src/**/*.ts",
     "./utils/**/*.ts",
     "./tests/*.ts",
     "./tests/**/*.ts",

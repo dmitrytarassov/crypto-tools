@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@polkadotTypes/*": ["./src/types/*"]
+    }
+  },
+  "include": [
+    "./src/*.ts",
+    "./src/**/*.ts",
+    "./types/*.ts",
+    "./types/**/*.ts",
+    "tsup.config.ts"
+  ]
+}
