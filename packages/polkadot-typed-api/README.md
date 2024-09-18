@@ -71,3 +71,11 @@ const data = api["query" || "rpc" || "tx"][palletName][methodName](connection, .
 | api.query.session                                                                                                                                         |      -      |      10%       |
 | api.query.staking                                                                                                                                         |      -      |       5%       |
 | rpc.system.accountNextIndex                                                                                                                               |      -      |       1%       |
+
+### Useful Utils
+- `awaitTransaction` - await transaction cancellation
+- `polkadotExplorerUrl` - get subscan or another explorer link url by params 
+
+```typescript
+import { utils } from "polkadot-typed-api";
+```
