@@ -1,4 +1,4 @@
-import { toBigNumber, removeLeading0x } from "common-crypto-tools/common";
+import { toBigNumber, removeLeading0x } from "common-crypto-tools";
 import { BigNumber, ethers } from "ethers";
 
 import {

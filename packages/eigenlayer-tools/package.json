@@ -4,7 +4,7 @@
     "eigen"
   ],
   "name": "eigenlayer-tools",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "dependencies": {
     "bignumber.js": "^9.1.2",
     "ethers": "^5.7.2",
-    "common-crypto-tools": "^0.9.0"
+    "common-crypto-tools": "^1.0.0"
   },
   "devDependencies": {
     "@typechain/ethers-v5": "^11.1.2"
