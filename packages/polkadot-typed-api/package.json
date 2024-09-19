@@ -7,7 +7,7 @@
   ],
   "name": "polkadot-typed-api",
   "main": "src/index.ts",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",

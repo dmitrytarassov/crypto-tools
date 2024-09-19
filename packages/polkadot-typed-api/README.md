@@ -72,6 +72,21 @@ const data = api["query" || "rpc" || "tx"][palletName][methodName](connection, .
 | api.query.staking                                                                                                                                         |      -      |       5%       |
 | rpc.system.accountNextIndex                                                                                                                               |      -      |       1%       |
 
+### Types usage
+```typescript
+import type { Staking_Ledger_Json } from "polkadot-typed-api/types/api/query/staking/ledger";
+import { api } from "polkadot-typed-api";
+
+// Define variable type
+let unblocking: Staking_Ledger_Json['unlocking'] = [];
+
+const data = await api.query.staking.ledger(connection, account); // Staking_Ledger_Json
+if (data) {
+  // Set-Up variable value
+  unblocking = data.unblocking;
+}
+```
+
 ### Useful Utils
 - `awaitTransaction` - await transaction cancellation
 - `polkadotExplorerUrl` - get subscan or another explorer link url by params 
