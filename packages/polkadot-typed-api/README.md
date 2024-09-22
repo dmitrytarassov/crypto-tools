@@ -70,8 +70,8 @@ const data = api["query" || "rpc" || "tx"][palletName][methodName](connection, .
 | [api.query.timestamp](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/timestamp/README.md)             |      +      |      100%      |
 | api.query.session                                                                                                                                         |      -      |      10%       |
 | api.query.staking                                                                                                                                         |      -      |       5%       |
-| rpc.system.accountNextIndex                                                                                                                               |      -      |       1%       |
-| [api.tx.balances](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/balances/README.md)                     | + | 100% |
+| api.rpc.system                                                                                                                           |      -      |       1%       |
+| [api.tx.balances](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/balances/README.md)                     | + |       0%       |
 
 ### Types usage
 ```typescript
