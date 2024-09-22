@@ -1,10 +1,13 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function transferKeepAlive(
+/**
+ * Transfer some liquid free balance to another account.
+ */
+export async function transferAllowDeath(
   apiPromise: ApiPromise,
   dest: string,
   value: string | number
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.balances.transferAll(dest, value);
+  return apiPromise.tx.balances.transferAllowDeath(dest, value);
 }

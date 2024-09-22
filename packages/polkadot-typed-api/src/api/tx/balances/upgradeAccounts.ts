@@ -1,10 +1,12 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function forceUnreserve(
+/**
+ * Upgrade a specified account.
+ */
+export async function upgradeAccounts(
   apiPromise: ApiPromise,
-  who: string,
-  amount: string | number
+  who: string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.balances.forceUnreserve(who, amount);
+  return apiPromise.tx.balances.upgradeAccounts(who);
 }
