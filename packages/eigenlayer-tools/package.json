@@ -4,7 +4,7 @@
     "eigen"
   ],
   "name": "eigenlayer-tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "https://github.com/dmitrytarassov/crypto-tools.git",
   "author": "Dmitriy Tarasov <meowbl@icloud.com>",
   "license": "MIT",

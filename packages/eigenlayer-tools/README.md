@@ -1,3 +1,5 @@
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdmitrytarassov%2Fcrypto-tools%2Frefs%2Fheads%2Fmain%2Fpackages%2Feigenlayer-tools%2Fpackage.json&query=%24.version&style=for-the-badge&label=EigenLayer%20Tools&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Feigenlayer-tools)
+
 # The list of common tools for [EigenLayer](https://eigenlayer.xyz/)
 
 ## Tools
