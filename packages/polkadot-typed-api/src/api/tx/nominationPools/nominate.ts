@@ -1,9 +1,13 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function migratePoolToDelegateStake(
+/**
+ * Nominate on behalf of the pool.
+ */
+export async function nominate(
   apiPromise: ApiPromise,
-  poolId: number
+  poolId: number,
+  validators: string[]
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.migratePoolToDelegateStake(poolId);
+  return apiPromise.tx.nominationPools.nominate(poolId, validators);
 }

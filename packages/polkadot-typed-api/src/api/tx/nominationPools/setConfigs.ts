@@ -1,10 +1,20 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function setCommissionMax(
+interface PoolConfig {
+  minJoinBond: bigint | number;
+  minCreateBond: bigint | number;
+  maxMembers: number;
+  maxPoolCommission: bigint | number;
+}
+
+/**
+ * Update configurations for the nomination pools. The origin for this call must be
+ */
+export async function setConfigs(
   apiPromise: ApiPromise,
   poolId: number,
-  maxCommission: number
+  config: PoolConfig
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.setCommissionMax(poolId, maxCommission);
+  return apiPromise.tx.nominationPools.setConfigs(poolId, config);
 }

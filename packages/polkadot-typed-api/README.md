@@ -74,6 +74,7 @@ const data = api["query" || "rpc" || "tx"][palletName][methodName](connection, .
 | api.query.staking                                                                                                                                         |      -      |       5%       |
 | api.rpc.system                                                                                                                           |      -      |       1%       |
 | [api.tx.balances](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/balances/README.md)                     | + |       0%       |
+| [api.tx.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/nominationPools/README.md) | + | 0% |
 
 ### Types usage
 ```typescript

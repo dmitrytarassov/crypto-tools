@@ -1,10 +1,16 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function setCommission(
+/**
+ * Set or remove a pool's commission claim permission.
+ */
+export async function setCommissionClaimPermission(
   apiPromise: ApiPromise,
   poolId: number,
-  newCommission?: [number, string] // [Perbill, AccountId32]
+  permission?: "Permissionless" | string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.setCommission(poolId, newCommission);
+  return apiPromise.tx.nominationPools.setCommissionClaimPermission(
+    poolId,
+    permission
+  );
 }

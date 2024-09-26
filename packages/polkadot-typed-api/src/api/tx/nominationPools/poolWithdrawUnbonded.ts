@@ -1,10 +1,16 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function nominate(
+/**
+ * Call `withdraw_unbonded` for the pools account. This call can be made by any account.
+ */
+export async function poolWithdrawUnbonded(
   apiPromise: ApiPromise,
   poolId: number,
-  validators: string[]
+  numSlashingSpans: number
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.nominate(poolId, validators);
+  return apiPromise.tx.nominationPools.poolWithdrawUnbonded(
+    poolId,
+    numSlashingSpans
+  );
 }

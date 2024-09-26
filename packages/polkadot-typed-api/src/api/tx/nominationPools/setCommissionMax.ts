@@ -1,13 +1,13 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function setCommissionClaimPermission(
+/**
+ * Set the maximum commission of a pool.
+ */
+export async function setCommissionMax(
   apiPromise: ApiPromise,
   poolId: number,
-  permission?: "Permissionless" | string
+  maxCommission: number
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.setCommissionClaimPermission(
-    poolId,
-    permission
-  );
+  return apiPromise.tx.nominationPools.setCommissionMax(poolId, maxCommission);
 }

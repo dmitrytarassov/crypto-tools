@@ -1,9 +1,12 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function claimPayoutOther(
+/**
+ * Migrates delegated funds from the pool account to the `member_account`.
+ */
+export async function migrateDelegation(
   apiPromise: ApiPromise,
-  other: string
+  memberAccount: string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.claimPayoutOther(other);
+  return apiPromise.tx.nominationPools.migrateDelegation(memberAccount);
 }

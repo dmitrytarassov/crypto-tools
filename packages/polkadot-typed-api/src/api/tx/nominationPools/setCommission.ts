@@ -1,13 +1,13 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function poolWithdrawUnbonded(
+/**
+ * Set the commission of a pool.
+ */
+export async function setCommission(
   apiPromise: ApiPromise,
   poolId: number,
-  numSlashingSpans: number
+  newCommission?: [number, string] // [Perbill, AccountId32]
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.poolWithdrawUnbonded(
-    poolId,
-    numSlashingSpans
-  );
+  return apiPromise.tx.nominationPools.setCommission(poolId, newCommission);
 }

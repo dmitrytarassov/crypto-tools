@@ -1,9 +1,12 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function applySlash(
+/**
+ * Bond `extra` more funds from `origin` into the pool to which they already belong.
+ */
+export async function bondExtra(
   apiPromise: ApiPromise,
-  memberAccount: string
+  extra: number | string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.applySlash(memberAccount);
+  return apiPromise.tx.nominationPools.bondExtra(extra);
 }

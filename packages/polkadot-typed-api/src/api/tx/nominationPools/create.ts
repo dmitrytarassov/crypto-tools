@@ -1,9 +1,15 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function claimPayoutOther(
+/**
+ * Create a new delegation pool.
+ */
+export async function create(
   apiPromise: ApiPromise,
-  other: string
+  amount: string | number,
+  root: string,
+  nominator: string,
+  bouncer: string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.claimPayoutOther(other);
+  return apiPromise.tx.nominationPools.create(amount, root, nominator, bouncer);
 }

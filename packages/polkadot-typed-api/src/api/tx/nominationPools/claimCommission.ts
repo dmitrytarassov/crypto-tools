@@ -1,9 +1,12 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function chill(
+/**
+ * Claim pending commission.
+ */
+export async function claimCommission(
   apiPromise: ApiPromise,
   poolId: number
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.chill(poolId);
+  return apiPromise.tx.nominationPools.claimCommission(poolId);
 }

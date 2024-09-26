@@ -1,13 +1,16 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function poolWithdrawUnbonded(
+/**
+ * Allows a pool member to set a claim permission to allow or disallow permissionless
+ */
+export async function setClaimPermission(
   apiPromise: ApiPromise,
-  poolId: number,
-  numSlashingSpans: number
+  permission:
+    | "Permissioned"
+    | "PermissionlessCompound"
+    | "PermissionlessWithdraw"
+    | "PermissionlessAll"
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.poolWithdrawUnbonded(
-    poolId,
-    numSlashingSpans
-  );
+  return apiPromise.tx.nominationPools.setClaimPermission(permission);
 }

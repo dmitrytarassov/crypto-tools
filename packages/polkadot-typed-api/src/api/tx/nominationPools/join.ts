@@ -2,12 +2,12 @@ import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
 /**
- * Burn the specified liquid free balance from the origin account.
+ * Stake funds with a pool. The amount to bond is transferred from the member to the
  */
-export async function burn(
+export async function join(
   apiPromise: ApiPromise,
-  value: string | number,
-  keepAlive: boolean
+  amount: string | number,
+  poolId: number
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.balances.burn(value, keepAlive);
+  return apiPromise.tx.nominationPools.join(amount, poolId);
 }

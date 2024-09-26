@@ -1,9 +1,12 @@
 import { ApiPromise } from "@polkadot/api";
 import { SubmittableExtrinsic } from "@polkadot/api/promise/types";
 
-export async function adjustPoolDeposit(
+/**
+ * Apply a pending slash on a member.
+ */
+export async function applySlash(
   apiPromise: ApiPromise,
-  poolId: number
+  memberAccount: string
 ): Promise<SubmittableExtrinsic> {
-  return apiPromise.tx.nominationPools.adjustPoolDeposit(poolId);
+  return apiPromise.tx.nominationPools.applySlash(memberAccount);
 }
