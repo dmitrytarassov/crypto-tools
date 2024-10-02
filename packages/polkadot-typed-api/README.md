@@ -64,17 +64,19 @@ const data = api["query" || "rpc" || "tx"][palletName][methodName](connection, .
 ```
 
 ### Typed Pallets:
-| Pallet                                                                                                                                                    | Fully Typed | Tests Coverage |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------:|:--------------:|
-| [api.query.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/nominationPools/README.md) |      -      |       5%       |
-| api.query.proxy                                                                                                                                           |      -      |       5%       |
-| [api.query.system](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/system/README.md)                   |      +      |      100%      |
-| [api.query.timestamp](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/timestamp/README.md)             |      +      |      100%      |
-| api.query.session                                                                                                                                         |      -      |      10%       |
-| api.query.staking                                                                                                                                         |      -      |       5%       |
-| api.rpc.system                                                                                                                           |      -      |       1%       |
-| [api.tx.balances](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/balances/README.md)                     | + |       0%       |
-| [api.tx.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/nominationPools/README.md) | + | 0% |
+| Pallet                                                                                                                                                              | Fully Typed | Tests Coverage |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------:|:--------------:|
+| [api.query.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/nominationPools/README.md)           |      -      |       5%       |
+| api.query.proxy                                                                                                                                                     |      -      |       5%       |
+| [api.query.system](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/system/README.md)                             |      +      |      100% ✅     |
+| [api.query.timestamp](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/query/timestamp/README.md)                       |      +      |      100% ✅     |
+| api.query.session                                                                                                                                                   |      -      |      10%       |
+| api.query.staking                                                                                                                                                   |      -      |       5%       |
+| api.rpc.system                                                                                                                                                      |      -      |       1%       |
+| [api.tx.balances](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/balances/README.md)                               | + |       0%       |
+| [api.tx.nominationPools](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/tx/nominationPools/README.md)                 | + |       0%       |
+| [api.call.authorityDiscoveryApi](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/call/authorityDiscoveryApi/README.md) | + |     100% ✅     |
+| [api.call.accountNonceApi](https://github.com/dmitrytarassov/crypto-tools/blob/main/packages/polkadot-typed-api/src/api/call/accountNonceApi/README.md)             | + |     100% ✅     |
 
 ### Types usage
 ```typescript

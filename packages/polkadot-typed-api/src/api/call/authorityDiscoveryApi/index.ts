@@ -1,0 +1,1 @@
+export { authorities } from "./authorities";
