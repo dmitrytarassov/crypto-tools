@@ -11,7 +11,7 @@ type LinkType =
   | "v";
 
 const linkType: {
-  [key in LinkType]: string;
+  [key: string]: string;
 } = {
   account: "account",
   address: "account",
@@ -27,14 +27,17 @@ export function polkadotExplorerUrl(
   networkName: string,
   domain = "subscan.io"
 ) {
-  return function (type: LinkType, addressOrHash: string | Hash): string {
+  return function (
+    type: LinkType | string,
+    addressOrHash: number | string | Hash
+  ): string {
     const value =
-      typeof addressOrHash === "string"
+      typeof addressOrHash === "string" || typeof addressOrHash === "number"
         ? addressOrHash
         : addressOrHash.toHuman();
 
     return `https://${networkName.toLowerCase()}.${domain}/${
-      linkType[type]
+      linkType[type] || type
     }/${value}`;
   };
 }

@@ -1,25 +1,16 @@
 import { ApiPromise } from "@polkadot/api";
 
-import { BrokenNumberType } from "../../../types/common/BrokenNumberType";
+import { Nomination_Pools_Bonded_Pools_Json } from "../../../types/api/query/nominationPools";
+import { Nomination_Pools_Bonded_Pools_Entries } from "../../../types/api/query/nominationPools/bondedPools";
 
-export type Nomination_Pools_Bonded_Pools_Json = {
-  commission: {
-    current: [number, string] | null;
-    max: number | null;
-    changeRate: { maxIncrease: number; minDelay: number } | null;
-    throttleFrom: number | null;
-    claimPermission: null; // always null
-  };
-  memberCounter: number;
-  points: BrokenNumberType;
-  roles: {
-    depositor: string;
-    root: string;
-    nominator: string;
-    bouncer: string;
-  };
-  state: "Open" | "Destroying" | "Blocked";
-};
+function modifyPoolData(poolData: Nomination_Pools_Bonded_Pools_Json | null) {
+  if (poolData && typeof poolData.points === "string") {
+    // BECAUSE POLKADOT!!!!! { ..., points: "5,394,169,567,929,903" } it's not OK!!!!!
+    poolData.points = `${poolData.points}`.replaceAll(",", "");
+  }
+
+  return poolData;
+}
 
 /*
  * Storage for bonded pools.
@@ -30,13 +21,11 @@ export async function bondedPools(
 ): Promise<Nomination_Pools_Bonded_Pools_Json | null> {
   const data = await apiPromise.query.nominationPools.bondedPools(poolId);
 
-  return data.toJSON() as any as Nomination_Pools_Bonded_Pools_Json | null;
-}
+  const poolData =
+    data.toJSON() as any as Nomination_Pools_Bonded_Pools_Json | null;
 
-export type Nomination_Pools_Bonded_Pools_Entries = [
-  number,
-  Nomination_Pools_Bonded_Pools_Json
-][];
+  return modifyPoolData(poolData);
+}
 
 bondedPools.entries = async function (
   apiPromise: ApiPromise
@@ -48,7 +37,7 @@ bondedPools.entries = async function (
   data.forEach(([poolId, data]) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    result.push([+poolId.toHuman()[0], data.toHuman()]);
+    result.push([+poolId.toHuman()[0], modifyPoolData(data.toJSON())]);
   });
 
   return result;

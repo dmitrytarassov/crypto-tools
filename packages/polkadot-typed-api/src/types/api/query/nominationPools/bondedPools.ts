@@ -18,3 +18,8 @@ export type Nomination_Pools_Bonded_Pools_Json = {
   };
   state: "Open" | "Destroying" | "Blocked";
 };
+
+export type Nomination_Pools_Bonded_Pools_Entries = [
+  number,
+  Nomination_Pools_Bonded_Pools_Json
+][];
