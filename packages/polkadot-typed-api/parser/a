@@ -1,0 +1,1034 @@
+yarn run v1.22.19
+$ tsx parser/generate.ts
+parsing pallet System
+	- query
+		Account - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":3}}
+			Arguments: 
+			Return: {nonce: u32, consumers: u32, providers: u32, sufficients: u32, data: Lookup5}
+		ExtrinsicCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		InherentsApplied - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		BlockWeight - Plain - {"plain":9}
+			Arguments: 
+			Return: {normal: Lookup10, operational: Lookup10, mandatory: Lookup10}
+		AllExtrinsicsLen - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		BlockHash - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":13}}
+			Arguments: 
+			Return: {}
+		ExtrinsicData - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":14}}
+			Arguments: 
+			Return: {}
+		Number - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ParentHash - Plain - {"plain":13}
+			Arguments: 
+			Return: {}
+		Digest - Plain - {"plain":15}
+			Arguments: 
+			Return: {logs: Vec<SpRuntimeDigestDigestItem>}
+		Events - Plain - {"plain":19}
+			Arguments: 
+			Return: {arg: undefinedVec<FrameSystemEventRecord>}
+		EventCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		EventTopics - Map - {"map":{"hashers":["Blake2_128Concat"],"key":13,"value":498}}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		LastRuntimeUpgrade - Plain - {"plain":499}
+			Arguments: 
+			Return: {specVersion: Compact<u32>, specName: Text}
+		UpgradedToU32RefCount - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		UpgradedToTripleRefCount - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		ExecutionPhase - Plain - {"plain":497}
+			Arguments: 
+			Return: {ApplyExtrinsic: u32, Finalization: Null, Initialization: Null}
+		AuthorizedUpgrade - Plain - {"plain":501}
+			Arguments: 
+			Return: {codeHash: H256, checkVersion: bool}
+parsing pallet Scheduler
+	- query
+		IncompleteSince - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Agenda - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":513}}
+			Arguments: 
+			Return: {arg: undefinedVec<Option<PalletSchedulerScheduled>>}
+		Retries - Map - {"map":{"hashers":["Blake2_128Concat"],"key":32,"value":517}}
+			Arguments: u32, u32
+			Return: {totalRetries: u8, remaining: u8, period: u32}
+		Lookup - Map - {"map":{"hashers":["Twox64Concat"],"key":1,"value":32}}
+			Arguments: undefined[u8;32]
+			Return: {arg0: u32, arg1: u32}
+parsing pallet Preimage
+	- query
+		StatusFor - Map - {"map":{"hashers":["Identity"],"key":13,"value":519}}
+			Arguments: 
+			Return: {Unrequested: {"deposit":"(AccountId32,u128)","len":"u32"}, Requested: {"deposit":"Option<(AccountId32,u128)>","count":"u32","len":"Option<u32>"}}
+		RequestStatusFor - Map - {"map":{"hashers":["Identity"],"key":13,"value":521}}
+			Arguments: 
+			Return: {Unrequested: {"ticket":"(AccountId32,u128)","len":"u32"}, Requested: {"maybeTicket":"Option<(AccountId32,u128)>","count":"u32","maybeLen":"Option<u32>"}}
+		PreimageFor - Map - {"map":{"hashers":["Identity"],"key":525,"value":526}}
+			Arguments: H256, u32
+			Return: {}
+parsing pallet Babe
+	- query
+		EpochIndex - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		Authorities - Plain - {"plain":528}
+			Arguments: 
+			Return: {arg: undefinedVec<(SpConsensusBabeAppPublic,u64)>}
+		GenesisSlot - Plain - {"plain":106}
+			Arguments: 
+			Return: {}
+		CurrentSlot - Plain - {"plain":106}
+			Arguments: 
+			Return: {}
+		Randomness - Plain - {"plain":1}
+			Arguments: 
+			Return: {arg: undefined[u8;32]}
+		PendingEpochConfigChange - Plain - {"plain":108}
+			Arguments: 
+			Return: {__Unused0: Null, V1: {"c":"(u64,u64)","allowedSlots":"SpConsensusBabeAllowedSlots"}}
+		NextRandomness - Plain - {"plain":1}
+			Arguments: 
+			Return: {arg: undefined[u8;32]}
+		NextAuthorities - Plain - {"plain":528}
+			Arguments: 
+			Return: {arg: undefinedVec<(SpConsensusBabeAppPublic,u64)>}
+		SegmentIndex - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		UnderConstruction - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":531}}
+			Arguments: 
+			Return: {arg: undefinedVec<[u8;32]>}
+		Initialized - Plain - {"plain":533}
+			Arguments: 
+			Return: {arg: undefinedOption<SpConsensusBabeDigestsPreDigest>}
+		AuthorVrfRandomness - Plain - {"plain":33}
+			Arguments: 
+			Return: {arg: undefinedOption<[u8;32]>}
+		EpochStart - Plain - {"plain":32}
+			Arguments: 
+			Return: {arg0: u32, arg1: u32}
+		Lateness - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		EpochConfig - Plain - {"plain":539}
+			Arguments: 
+			Return: {c: (u64,u64), allowedSlots: Lookup110}
+		NextEpochConfig - Plain - {"plain":539}
+			Arguments: 
+			Return: {c: (u64,u64), allowedSlots: Lookup110}
+		SkippedEpochs - Plain - {"plain":540}
+			Arguments: 
+			Return: {arg: undefinedVec<(u64,u32)>}
+parsing pallet Timestamp
+	- query
+		Now - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		DidUpdate - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+parsing pallet Indices
+	- query
+		Accounts - Map - {"map":{"hashers":["Blake2_128Concat"],"key":4,"value":544}}
+			Arguments: 
+			Return: {arg0: AccountId32, arg1: u128, arg2: bool}
+parsing pallet Balances
+	- query
+		TotalIssuance - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		InactiveIssuance - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		Account - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":5}}
+			Arguments: 
+			Return: {free: u128, reserved: u128, frozen: u128, flags: u128}
+		Locks - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":546}}
+			Arguments: 
+			Return: {arg: undefinedVec<PalletBalancesBalanceLock>}
+		Reserves - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":550}}
+			Arguments: 
+			Return: {arg: undefinedVec<PalletBalancesReserveData>}
+		Holds - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":553}}
+			Arguments: 
+			Return: {arg: undefinedVec<FrameSupportTokensMiscIdAmountRuntimeHoldReason>}
+		Freezes - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":559}}
+			Arguments: 
+			Return: {arg: undefinedVec<FrameSupportTokensMiscIdAmountRuntimeFreezeReason>}
+parsing pallet TransactionPayment
+	- query
+		NextFeeMultiplier - Plain - {"plain":436}
+			Arguments: 
+			Return: {}
+		StorageVersion - Plain - {"plain":565}
+			Arguments: 
+			Return: {V1Ancient: Null, V2: Null}
+parsing pallet Authorship
+	- query
+		Author - Plain - {"plain":0}
+			Arguments: 
+			Return: {}
+parsing pallet Staking
+	- query
+		ValidatorCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		MinimumValidatorCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Invulnerables - Plain - {"plain":116}
+			Arguments: 
+			Return: {arg: undefinedVec<AccountId32>}
+		Bonded - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":0}}
+			Arguments: 
+			Return: {}
+		MinNominatorBond - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MinValidatorBond - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MinimumActiveStake - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MinCommission - Plain - {"plain":43}
+			Arguments: 
+			Return: {}
+		Ledger - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":566}}
+			Arguments: 
+			Return: {stash: AccountId32, total: Compact<u128>, active: Compact<u128>, unlocking: Vec<PalletStakingUnlockChunk>, legacyClaimedRewards: Vec<u32>}
+		Payee - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":42}}
+			Arguments: 
+			Return: {Staked: Null, Stash: Null, Controller: Null, Account: AccountId32, None: Null}
+		Validators - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":44}}
+			Arguments: 
+			Return: {commission: Compact<Perbill>, blocked: bool}
+		CounterForValidators - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		MaxValidatorsCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Nominators - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":568}}
+			Arguments: 
+			Return: {targets: Vec<AccountId32>, submittedIn: u32, suppressed: bool}
+		CounterForNominators - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		VirtualStakers - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":35}}
+			Arguments: 
+			Return: {}
+		CounterForVirtualStakers - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		MaxNominatorsCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		CurrentEra - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ActiveEra - Plain - {"plain":570}
+			Arguments: 
+			Return: {index: u32, start: Option<u64>}
+		ErasStartSessionIndex - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":4}}
+			Arguments: 
+			Return: {}
+		ErasStakers - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":573}}
+			Arguments: u32, AccountId32
+			Return: {total: Compact<u128>, own: Compact<u128>, others: Vec<SpStakingIndividualExposure>}
+		ErasStakersOverview - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":576}}
+			Arguments: u32, AccountId32
+			Return: {total: Compact<u128>, own: Compact<u128>, nominatorCount: u32, pageCount: u32}
+		ErasStakersClipped - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":573}}
+			Arguments: u32, AccountId32
+			Return: {total: Compact<u128>, own: Compact<u128>, others: Vec<SpStakingIndividualExposure>}
+		ErasStakersPaged - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat","Twox64Concat"],"key":577,"value":578}}
+			Arguments: u32, AccountId32, u32
+			Return: {pageTotal: Compact<u128>, others: Vec<SpStakingIndividualExposure>}
+		ClaimedRewards - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":121}}
+			Arguments: u32, AccountId32
+			Return: {arg: undefinedVec<u32>}
+		ErasValidatorPrefs - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":44}}
+			Arguments: u32, AccountId32
+			Return: {commission: Compact<Perbill>, blocked: bool}
+		ErasValidatorReward - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":6}}
+			Arguments: 
+			Return: {}
+		ErasRewardPoints - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":579}}
+			Arguments: 
+			Return: {total: u32, individual: BTreeMap<AccountId32, u32>}
+		ErasTotalStake - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":6}}
+			Arguments: 
+			Return: {}
+		ForceEra - Plain - {"plain":46}
+			Arguments: 
+			Return: {NotForcing: Null, ForceNew: Null, ForceNone: Null, ForceAlways: Null}
+		MaxStakedRewards - Plain - {"plain":120}
+			Arguments: 
+			Return: {}
+		SlashRewardFraction - Plain - {"plain":43}
+			Arguments: 
+			Return: {}
+		CanceledSlashPayout - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		UnappliedSlashes - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":583}}
+			Arguments: 
+			Return: {arg: undefinedVec<PalletStakingUnappliedSlash>}
+		BondedEras - Plain - {"plain":498}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		ValidatorSlashInEra - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":585}}
+			Arguments: u32, AccountId32
+			Return: {arg0: Perbill, arg1: u128}
+		NominatorSlashInEra - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":572,"value":6}}
+			Arguments: u32, AccountId32
+			Return: {}
+		SlashingSpans - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":586}}
+			Arguments: 
+			Return: {spanIndex: u32, lastStart: u32, lastNonzeroSlash: u32, prior: Vec<u32>}
+		SpanSlash - Map - {"map":{"hashers":["Twox64Concat"],"key":582,"value":587}}
+			Arguments: AccountId32, u32
+			Return: {slashed: u128, paidOut: u128}
+		CurrentPlannedSession - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		DisabledValidators - Plain - {"plain":121}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		ChillThreshold - Plain - {"plain":120}
+			Arguments: 
+			Return: {}
+parsing pallet Offences
+	- query
+		Reports - Map - {"map":{"hashers":["Twox64Concat"],"key":13,"value":589}}
+			Arguments: 
+			Return: {offender: (AccountId32,SpStakingExposure), reporters: Vec<AccountId32>}
+		ConcurrentReportsIndex - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":591,"value":101}}
+			Arguments: [u8;16], Bytes
+			Return: {arg: undefinedVec<H256>}
+parsing pallet Historical
+	- query
+		HistoricalSessions - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":525}}
+			Arguments: 
+			Return: {arg0: H256, arg1: u32}
+		StoredRange - Plain - {"plain":32}
+			Arguments: 
+			Return: {arg0: u32, arg1: u32}
+parsing pallet Session
+	- query
+		Validators - Plain - {"plain":116}
+			Arguments: 
+			Return: {arg: undefinedVec<AccountId32>}
+		CurrentIndex - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		QueuedChanged - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		QueuedKeys - Plain - {"plain":592}
+			Arguments: 
+			Return: {arg: undefinedVec<(AccountId32,PolkadotRuntimeSessionKeys)>}
+		DisabledValidators - Plain - {"plain":121}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		NextKeys - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":134}}
+			Arguments: 
+			Return: {grandpa: [u8;32], babe: [u8;32], paraValidator: [u8;32], paraAssignment: [u8;32], authorityDiscovery: [u8;32], beefy: [u8;33]}
+		KeyOwner - Map - {"map":{"hashers":["Twox64Concat"],"key":594,"value":0}}
+			Arguments: [u8;4], Bytes
+			Return: {}
+parsing pallet Grandpa
+	- query
+		State - Plain - {"plain":597}
+			Arguments: 
+			Return: {Live: Null, PendingPause: {"scheduledAt":"u32","delay":"u32"}, Paused: Null, PendingResume: {"scheduledAt":"u32","delay":"u32"}}
+		PendingChange - Plain - {"plain":598}
+			Arguments: 
+			Return: {scheduledAt: u32, delay: u32, nextAuthorities: Vec<(SpConsensusGrandpaAppPublic,u64)>, forced: Option<u32>}
+		NextForced - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Stalled - Plain - {"plain":32}
+			Arguments: 
+			Return: {arg0: u32, arg1: u32}
+		CurrentSetId - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		SetIdSession - Map - {"map":{"hashers":["Twox64Concat"],"key":12,"value":4}}
+			Arguments: 
+			Return: {}
+		Authorities - Plain - {"plain":599}
+			Arguments: 
+			Return: {arg: undefinedVec<(SpConsensusGrandpaAppPublic,u64)>}
+parsing pallet AuthorityDiscovery
+	- query
+		Keys - Plain - {"plain":601}
+			Arguments: 
+			Return: {arg: undefinedVec<SpAuthorityDiscoveryAppPublic>}
+		NextKeys - Plain - {"plain":601}
+			Arguments: 
+			Return: {arg: undefinedVec<SpAuthorityDiscoveryAppPublic>}
+parsing pallet Treasury
+	- query
+		ProposalCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Proposals - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":603}}
+			Arguments: 
+			Return: {proposer: AccountId32, value: u128, beneficiary: AccountId32, bond: u128}
+		Deactivated - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		Approvals - Plain - {"plain":604}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		SpendCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Spends - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":605}}
+			Arguments: 
+			Return: {assetKind: Lookup55, amount: u128, beneficiary: Lookup81, validFrom: u32, expireAt: u32, status: Lookup606}
+parsing pallet ConvictionVoting
+	- query
+		VotingFor - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":610,"value":611}}
+			Arguments: AccountId32, u16
+			Return: {Casting: Lookup612, Delegating: Lookup618}
+		ClassLocksFor - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":619}}
+			Arguments: 
+			Return: {arg: undefinedVec<(u16,u128)>}
+parsing pallet Referenda
+	- query
+		ReferendumCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ReferendumInfoFor - Map - {"map":{"hashers":["Blake2_128Concat"],"key":4,"value":623}}
+			Arguments: 
+			Return: {Ongoing: Lookup624, Approved: (u32,Option<PalletReferendaDeposit>,Option<PalletReferendaDeposit>), Rejected: (u32,Option<PalletReferendaDeposit>,Option<PalletReferendaDeposit>), Cancelled: (u32,Option<PalletReferendaDeposit>,Option<PalletReferendaDeposit>), TimedOut: (u32,Option<PalletReferendaDeposit>,Option<PalletReferendaDeposit>), Killed: u32}
+		TrackQueue - Map - {"map":{"hashers":["Twox64Concat"],"key":91,"value":631}}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u128)>}
+		DecidingCount - Map - {"map":{"hashers":["Twox64Concat"],"key":91,"value":4}}
+			Arguments: 
+			Return: {}
+		MetadataOf - Map - {"map":{"hashers":["Blake2_128Concat"],"key":4,"value":13}}
+			Arguments: 
+			Return: {}
+parsing pallet Origins
+	- no query
+parsing pallet Whitelist
+	- query
+		WhitelistedCall - Map - {"map":{"hashers":["Twox64Concat"],"key":13,"value":35}}
+			Arguments: 
+			Return: {}
+parsing pallet Parameters
+	- query
+		Parameters - Map - {"map":{"hashers":["Blake2_128Concat"],"key":455,"value":458}}
+			Arguments: Lookup456
+			Return: {Inflation: Lookup459}
+parsing pallet Claims
+	- query
+		Claims - Map - {"map":{"hashers":["Identity"],"key":183,"value":6}}
+			Arguments: 
+			Return: {}
+		Total - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		Vesting - Map - {"map":{"hashers":["Identity"],"key":183,"value":185}}
+			Arguments: 
+			Return: {arg0: u128, arg1: u128, arg2: u32}
+		Signing - Map - {"map":{"hashers":["Identity"],"key":183,"value":187}}
+			Arguments: 
+			Return: {Regular: Null, Saft: Null}
+		Preclaims - Map - {"map":{"hashers":["Identity"],"key":0,"value":183}}
+			Arguments: 
+			Return: {}
+parsing pallet Vesting
+	- query
+		Vesting - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":643}}
+			Arguments: 
+			Return: {arg: undefinedVec<PalletVestingVestingInfo>}
+		StorageVersion - Plain - {"plain":645}
+			Arguments: 
+			Return: {V0: Null, V1: Null}
+parsing pallet Utility
+	- no query
+parsing pallet Proxy
+	- query
+		Proxies - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":648}}
+			Arguments: 
+			Return: {arg0: Vec<PalletProxyProxyDefinition>, arg1: u128}
+		Announcements - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":652}}
+			Arguments: 
+			Return: {arg0: Vec<PalletProxyAnnouncement>, arg1: u128}
+parsing pallet Multisig
+	- query
+		Multisigs - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":657,"value":658}}
+			Arguments: AccountId32, [u8;32]
+			Return: {when: Lookup197, deposit: u128, depositor: AccountId32, approvals: Vec<AccountId32>}
+parsing pallet Bounties
+	- query
+		BountyCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Bounties - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":661}}
+			Arguments: 
+			Return: {proposer: AccountId32, value: u128, fee: u128, curatorDeposit: u128, bond: u128, status: Lookup662}
+		BountyDescriptions - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":663}}
+			Arguments: 
+			Return: {}
+		BountyApprovals - Plain - {"plain":604}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+parsing pallet ChildBounties
+	- query
+		ChildBountyCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ParentChildBounties - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":4}}
+			Arguments: 
+			Return: {}
+		ChildBounties - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":32,"value":665}}
+			Arguments: u32, u32
+			Return: {parentBounty: u32, value: u128, fee: u128, curatorDeposit: u128, status: Lookup666}
+		ChildBountyDescriptions - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":663}}
+			Arguments: 
+			Return: {}
+		ChildrenCuratorFees - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":6}}
+			Arguments: 
+			Return: {}
+parsing pallet ElectionProviderMultiPhase
+	- query
+		Round - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		CurrentPhase - Plain - {"plain":469}
+			Arguments: 
+			Return: {Off: Null, Signed: Null, Unsigned: (bool,u32), Emergency: Null}
+		QueuedSolution - Plain - {"plain":668}
+			Arguments: 
+			Return: {supports: Vec<(AccountId32,SpNposElectionsSupport)>, score: Lookup253, compute: Lookup468}
+		Snapshot - Plain - {"plain":670}
+			Arguments: 
+			Return: {voters: Vec<(AccountId32,u64,Vec<AccountId32>)>, targets: Vec<AccountId32>}
+		DesiredTargets - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		SnapshotMetadata - Plain - {"plain":254}
+			Arguments: 
+			Return: {voters: Compact<u32>, targets: Compact<u32>}
+		SignedSubmissionNextIndex - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		SignedSubmissionIndices - Plain - {"plain":673}
+			Arguments: 
+			Return: {arg: undefinedVec<(SpNposElectionsElectionScore,u32,u32)>}
+		SignedSubmissionsMap - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":676}}
+			Arguments: 
+			Return: {who: AccountId32, deposit: u128, rawSolution: Lookup201, callFee: u128}
+		MinimumUntrustedScore - Plain - {"plain":253}
+			Arguments: 
+			Return: {minimalStake: u128, sumStake: u128, sumStakeSquared: u128}
+parsing pallet VoterList
+	- query
+		ListNodes - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":678}}
+			Arguments: 
+			Return: {id: AccountId32, prev: Option<AccountId32>, next: Option<AccountId32>, bagUpper: u64, score: u64}
+		CounterForListNodes - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ListBags - Map - {"map":{"hashers":["Twox64Concat"],"key":12,"value":679}}
+			Arguments: 
+			Return: {head: Option<AccountId32>, tail: Option<AccountId32>}
+parsing pallet NominationPools
+	- query
+		TotalValueLocked - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MinJoinBond - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MinCreateBond - Plain - {"plain":6}
+			Arguments: 
+			Return: {}
+		MaxPools - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		MaxPoolMembers - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		MaxPoolMembersPerPool - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		GlobalMaxCommission - Plain - {"plain":43}
+			Arguments: 
+			Return: {}
+		PoolMembers - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":683}}
+			Arguments: 
+			Return: {poolId: u32, points: u128, lastRecordedRewardCounter: u128, unbondingEras: BTreeMap<u32, u128>}
+		CounterForPoolMembers - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		BondedPools - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":686}}
+			Arguments: 
+			Return: {commission: Lookup687, memberCounter: u32, points: u128, roles: Lookup690, state: Lookup264}
+		CounterForBondedPools - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		RewardPools - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":691}}
+			Arguments: 
+			Return: {lastRecordedRewardCounter: u128, lastRecordedTotalPayouts: u128, totalRewardsClaimed: u128, totalCommissionPending: u128, totalCommissionClaimed: u128}
+		CounterForRewardPools - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		SubPoolsStorage - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":692}}
+			Arguments: 
+			Return: {noEra: Lookup693, withEra: BTreeMap<u32, PalletNominationPoolsUnbondPool>}
+		CounterForSubPoolsStorage - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Metadata - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":698}}
+			Arguments: 
+			Return: {}
+		CounterForMetadata - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		LastPoolId - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ReversePoolIdLookup - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":4}}
+			Arguments: 
+			Return: {}
+		CounterForReversePoolIdLookup - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ClaimPermissions - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":269}}
+			Arguments: 
+			Return: {Permissioned: Null, PermissionlessCompound: Null, PermissionlessWithdraw: Null, PermissionlessAll: Null}
+parsing pallet FastUnstake
+	- query
+		Head - Plain - {"plain":701}
+			Arguments: 
+			Return: {stashes: Vec<(AccountId32,u128)>, checked: Vec<u32>}
+		Queue - Map - {"map":{"hashers":["Twox64Concat"],"key":0,"value":6}}
+			Arguments: 
+			Return: {}
+		CounterForQueue - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ErasToCheckPerBlock - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+parsing pallet ParachainsOrigin
+	- no query
+parsing pallet Configuration
+	- query
+		ActiveConfig - Plain - {"plain":705}
+			Arguments: 
+			Return: {maxCodeSize: u32, maxHeadDataSize: u32, maxUpwardQueueCount: u32, maxUpwardQueueSize: u32, maxUpwardMessageSize: u32, maxUpwardMessageNumPerCandidate: u32, hrmpMaxMessageNumPerCandidate: u32, validationUpgradeCooldown: u32, validationUpgradeDelay: u32, asyncBackingParams: Lookup277, maxPovSize: u32, maxDownwardMessageSize: u32, hrmpMaxParachainOutboundChannels: u32, hrmpSenderDeposit: u128, hrmpRecipientDeposit: u128, hrmpChannelMaxCapacity: u32, hrmpChannelMaxTotalSize: u32, hrmpMaxParachainInboundChannels: u32, hrmpChannelMaxMessageSize: u32, executorParams: Vec<PolkadotPrimitivesV7ExecutorParamsExecutorParam>, codeRetentionPeriod: u32, maxValidators: Option<u32>, disputePeriod: u32, disputePostConclusionAcceptancePeriod: u32, noShowSlots: u32, nDelayTranches: u32, zerothDelayTrancheWidth: u32, neededApprovals: u32, relayVrfModuloSamples: u32, pvfVotingTtl: u32, minimumValidationUpgradeDelay: u32, minimumBackingVotes: u32, nodeFeatures: BitVec, approvalVotingParams: Lookup283, schedulerParams: Lookup284}
+		PendingConfigs - Plain - {"plain":706}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,PolkadotRuntimeParachainsConfigurationHostConfiguration)>}
+		BypassConsistencyCheck - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+parsing pallet ParasShared
+	- query
+		CurrentSessionIndex - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ActiveValidatorIndices - Plain - {"plain":709}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		ActiveValidatorKeys - Plain - {"plain":710}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotPrimitivesV7ValidatorAppPublic>}
+		AllowedRelayParents - Plain - {"plain":711}
+			Arguments: 
+			Return: {buffer: Vec<(H256,H256)>, latestNumber: u32}
+parsing pallet ParaInclusion
+	- query
+		V1 - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":714}}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotRuntimeParachainsInclusionCandidatePendingAvailability>}
+parsing pallet ParaInherent
+	- query
+		Included - Plain - {"plain":35}
+			Arguments: 
+			Return: {}
+		OnChainVotes - Plain - {"plain":717}
+			Arguments: 
+			Return: {session: u32, backingValidatorsPerCandidate: Vec<(PolkadotPrimitivesV7CandidateReceipt,Vec<(u32,PolkadotPrimitivesV7ValidityAttestation)>)>, disputes: Vec<PolkadotPrimitivesV7DisputeStatementSet>}
+parsing pallet ParaScheduler
+	- query
+		ValidatorGroups - Plain - {"plain":723}
+			Arguments: 
+			Return: {arg: undefinedVec<Vec<u32>>}
+		AvailabilityCores - Plain - {"plain":724}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotRuntimeParachainsSchedulerPalletCoreOccupied>}
+		SessionStartBlock - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		ClaimQueue - Plain - {"plain":728}
+			Arguments: 
+			Return: {arg0: u32, arg1: Vec<PolkadotRuntimeParachainsSchedulerPalletParasEntry>}
+parsing pallet Paras
+	- query
+		PvfActiveVoteMap - Map - {"map":{"hashers":["Twox64Concat"],"key":302,"value":732}}
+			Arguments: 
+			Return: {votesAccept: BitVec, votesReject: BitVec, age: u32, createdAt: u32, causes: Vec<PolkadotRuntimeParachainsParasPvfCheckCause>}
+		PvfActiveVoteList - Plain - {"plain":736}
+			Arguments: 
+			Return: {arg: undefinedVec<H256>}
+		Parachains - Plain - {"plain":737}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		ParaLifecycles - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":738}}
+			Arguments: 
+			Return: {Onboarding: Null, Parathread: Null, Parachain: Null, UpgradingParathread: Null, DowngradingParachain: Null, OffboardingParathread: Null, OffboardingParachain: Null}
+		Heads - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":310}}
+			Arguments: 
+			Return: {}
+		MostRecentContext - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":4}}
+			Arguments: 
+			Return: {}
+		CurrentCodeHash - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":302}}
+			Arguments: 
+			Return: {}
+		PastCodeHash - Map - {"map":{"hashers":["Twox64Concat"],"key":739,"value":302}}
+			Arguments: u32, u32
+			Return: {}
+		PastCodeMeta - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":740}}
+			Arguments: 
+			Return: {upgradeTimes: Vec<PolkadotRuntimeParachainsParasReplacementTimes>, lastPruned: Option<u32>}
+		PastCodePruning - Plain - {"plain":743}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		FutureCodeUpgrades - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":4}}
+			Arguments: 
+			Return: {}
+		FutureCodeUpgradesAt - Plain - {"plain":743}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		FutureCodeHash - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":302}}
+			Arguments: 
+			Return: {}
+		UpgradeGoAheadSignal - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":744}}
+			Arguments: 
+			Return: {Abort: Null, GoAhead: Null}
+		UpgradeRestrictionSignal - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":745}}
+			Arguments: 
+			Return: {Present: Null}
+		UpgradeCooldowns - Plain - {"plain":743}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		UpcomingUpgrades - Plain - {"plain":743}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,u32)>}
+		ActionsQueue - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":737}}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		UpcomingParasGenesis - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":746}}
+			Arguments: 
+			Return: {genesisHead: Bytes, validationCode: Bytes, paraKind: bool}
+		CodeByHashRefs - Map - {"map":{"hashers":["Identity"],"key":302,"value":4}}
+			Arguments: 
+			Return: {}
+		CodeByHash - Map - {"map":{"hashers":["Identity"],"key":302,"value":309}}
+			Arguments: 
+			Return: {}
+parsing pallet Initializer
+	- query
+		HasInitialized - Plain - {"plain":35}
+			Arguments: 
+			Return: {}
+		BufferedSessionChanges - Plain - {"plain":748}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotRuntimeParachainsInitializerBufferedSessionChange>}
+parsing pallet Dmp
+	- query
+		DownwardMessageQueues - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":750}}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotCorePrimitivesInboundDownwardMessage>}
+		DownwardMessageQueueHeads - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":13}}
+			Arguments: 
+			Return: {}
+		DeliveryFeeFactor - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":436}}
+			Arguments: 
+			Return: {}
+parsing pallet Hrmp
+	- query
+		HrmpOpenChannelRequests - Map - {"map":{"hashers":["Twox64Concat"],"key":326,"value":752}}
+			Arguments: u32, u32
+			Return: {confirmed: bool, age: u32, senderDeposit: u128, maxMessageSize: u32, maxCapacity: u32, maxTotalSize: u32}
+		HrmpOpenChannelRequestsList - Plain - {"plain":753}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotParachainPrimitivesPrimitivesHrmpChannelId>}
+		HrmpOpenChannelRequestCount - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":4}}
+			Arguments: 
+			Return: {}
+		HrmpAcceptedChannelRequestCount - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":4}}
+			Arguments: 
+			Return: {}
+		HrmpCloseChannelRequests - Map - {"map":{"hashers":["Twox64Concat"],"key":326,"value":35}}
+			Arguments: u32, u32
+			Return: {}
+		HrmpCloseChannelRequestsList - Plain - {"plain":753}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotParachainPrimitivesPrimitivesHrmpChannelId>}
+		HrmpWatermarks - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":4}}
+			Arguments: 
+			Return: {}
+		HrmpChannels - Map - {"map":{"hashers":["Twox64Concat"],"key":326,"value":754}}
+			Arguments: u32, u32
+			Return: {maxCapacity: u32, maxTotalSize: u32, maxMessageSize: u32, msgCount: u32, totalSize: u32, mqcHead: Option<H256>, senderDeposit: u128, recipientDeposit: u128}
+		HrmpIngressChannelsIndex - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":737}}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		HrmpEgressChannelsIndex - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":737}}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		HrmpChannelContents - Map - {"map":{"hashers":["Twox64Concat"],"key":326,"value":755}}
+			Arguments: u32, u32
+			Return: {arg: undefinedVec<PolkadotCorePrimitivesInboundHrmpMessage>}
+		HrmpChannelDigests - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":757}}
+			Arguments: 
+			Return: {arg: undefinedVec<(u32,Vec<u32>)>}
+parsing pallet ParaSessionInfo
+	- query
+		AssignmentKeysUnsafe - Plain - {"plain":760}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotPrimitivesV7AssignmentAppPublic>}
+		EarliestStoredSession - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Sessions - Map - {"map":{"hashers":["Identity"],"key":4,"value":761}}
+			Arguments: 
+			Return: {activeValidatorIndices: Vec<u32>, randomSeed: [u8;32], disputePeriod: u32, validators: Vec<PolkadotPrimitivesV7ValidatorAppPublic>, discoveryKeys: Vec<SpAuthorityDiscoveryAppPublic>, assignmentKeys: Vec<PolkadotPrimitivesV7AssignmentAppPublic>, validatorGroups: Vec<Vec<u32>>, nCores: u32, zerothDelayTrancheWidth: u32, relayVrfModuloSamples: u32, nDelayTranches: u32, noShowSlots: u32, neededApprovals: u32}
+		AccountKeys - Map - {"map":{"hashers":["Identity"],"key":4,"value":116}}
+			Arguments: 
+			Return: {arg: undefinedVec<AccountId32>}
+		SessionExecutorParams - Map - {"map":{"hashers":["Identity"],"key":4,"value":278}}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotPrimitivesV7ExecutorParamsExecutorParam>}
+parsing pallet ParasDisputes
+	- query
+		LastPrunedSession - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		Disputes - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":764,"value":765}}
+			Arguments: u32, H256
+			Return: {validatorsFor: BitVec, validatorsAgainst: BitVec, start: u32, concludedAt: Option<u32>}
+		BackersOnDisputes - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":764,"value":766}}
+			Arguments: u32, H256
+			Return: {arg: undefinedBTreeSet<u32>}
+		Included - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":764,"value":4}}
+			Arguments: u32, H256
+			Return: {}
+		Frozen - Plain - {"plain":152}
+			Arguments: 
+			Return: {arg: undefinedOption<u32>}
+parsing pallet ParasSlashing
+	- query
+		UnappliedSlashes - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":764,"value":768}}
+			Arguments: u32, H256
+			Return: {keys_: BTreeMap<u32, PolkadotPrimitivesV7ValidatorAppPublic>, kind: Lookup331}
+		ValidatorSetCounts - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":4}}
+			Arguments: 
+			Return: {}
+parsing pallet OnDemand
+	- query
+		ParaIdAffinity - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":773}}
+			Arguments: 
+			Return: {coreIndex: u32, count: u32}
+		QueueStatus - Plain - {"plain":774}
+			Arguments: 
+			Return: {traffic: u128, nextIndex: u32, smallestIndex: u32, freedIndices: Vec<u32>}
+		FreeEntries - Plain - {"plain":779}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotRuntimeParachainsAssignerOnDemandTypesEnqueuedOrder>}
+		AffinityEntries - Map - {"map":{"hashers":["Twox64Concat"],"key":476,"value":779}}
+			Arguments: 
+			Return: {arg: undefinedVec<PolkadotRuntimeParachainsAssignerOnDemandTypesEnqueuedOrder>}
+		Revenue - Plain - {"plain":782}
+			Arguments: 
+			Return: {arg: undefinedVec<u128>}
+parsing pallet CoretimeAssignmentProvider
+	- query
+		CoreSchedules - Map - {"map":{"hashers":["Twox256"],"key":785,"value":786}}
+			Arguments: u32, u32
+			Return: {assignments: Vec<(PalletBrokerCoretimeInterfaceCoreAssignment,u16)>, endHint: Option<u32>, nextSchedule: Option<u32>}
+		CoreDescriptors - Map - {"map":{"hashers":["Twox256"],"key":476,"value":787}}
+			Arguments: 
+			Return: {queue: Option<PolkadotRuntimeParachainsAssignerCoretimeQueueDescriptor>, currentWork: Option<PolkadotRuntimeParachainsAssignerCoretimeWorkState>}
+parsing pallet Registrar
+	- query
+		PendingSwap - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":163}}
+			Arguments: 
+			Return: {}
+		Paras - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":796}}
+			Arguments: 
+			Return: {manager: AccountId32, deposit: u128, locked: Option<bool>}
+		NextFreeParaId - Plain - {"plain":163}
+			Arguments: 
+			Return: {}
+parsing pallet Slots
+	- query
+		Leases - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":798}}
+			Arguments: 
+			Return: {arg: undefinedVec<Option<(AccountId32,u128)>>}
+parsing pallet Auctions
+	- query
+		AuctionCounter - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		AuctionInfo - Plain - {"plain":32}
+			Arguments: 
+			Return: {arg0: u32, arg1: u32}
+		ReservedAmounts - Map - {"map":{"hashers":["Twox64Concat"],"key":800,"value":6}}
+			Arguments: AccountId32, u32
+			Return: {}
+		Winning - Map - {"map":{"hashers":["Twox64Concat"],"key":4,"value":801}}
+			Arguments: 
+			Return: {arg: undefined[Option<(AccountId32,u32,u128)>;36]}
+parsing pallet Crowdloan
+	- query
+		Funds - Map - {"map":{"hashers":["Twox64Concat"],"key":163,"value":805}}
+			Arguments: 
+			Return: {depositor: AccountId32, verifier: Option<SpRuntimeMultiSigner>, deposit: u128, raised: u128, end: u32, cap: u128, lastContribution: Lookup806, firstPeriod: u32, lastPeriod: u32, fundIndex: u32}
+		NewRaise - Plain - {"plain":737}
+			Arguments: 
+			Return: {arg: undefinedVec<u32>}
+		EndingsCount - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		NextFundIndex - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+parsing pallet Coretime
+	- no query
+parsing pallet StateTrieMigration
+	- query
+		MigrationProcess - Plain - {"plain":350}
+			Arguments: 
+			Return: {progressTop: Lookup351, progressChild: Lookup351, size_: u32, topItems: u32, childItems: u32}
+		AutoLimits - Plain - {"plain":348}
+			Arguments: 
+			Return: {arg: undefinedOption<PalletStateTrieMigrationMigrationLimits>}
+		SignedMigrationMaxLimits - Plain - {"plain":349}
+			Arguments: 
+			Return: {size_: u32, item: u32}
+parsing pallet XcmPallet
+	- query
+		QueryCounter - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		Queries - Map - {"map":{"hashers":["Blake2_128Concat"],"key":12,"value":809}}
+			Arguments: 
+			Return: {Pending: {"responder":"XcmVersionedLocation","maybeMatchQuerier":"Option<XcmVersionedLocation>","maybeNotify":"Option<(u8,u8)>","timeout":"u32"}, VersionNotifier: {"origin":"XcmVersionedLocation","isActive":"bool"}, Ready: {"response":"XcmVersionedResponse","at":"u32"}}
+		AssetTraps - Map - {"map":{"hashers":["Identity"],"key":13,"value":4}}
+			Arguments: 
+			Return: {}
+		SafeXcmVersion - Plain - {"plain":4}
+			Arguments: 
+			Return: {}
+		SupportedVersion - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":814,"value":4}}
+			Arguments: u32, Lookup81
+			Return: {}
+		VersionNotifiers - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":814,"value":12}}
+			Arguments: u32, Lookup81
+			Return: {}
+		VersionNotifyTargets - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat"],"key":814,"value":815}}
+			Arguments: u32, Lookup81
+			Return: {arg0: u64, arg1: Lookup10, arg2: u32}
+		VersionDiscoveryQueue - Plain - {"plain":816}
+			Arguments: 
+			Return: {arg: undefinedVec<(XcmVersionedLocation,u32)>}
+		CurrentMigration - Plain - {"plain":819}
+			Arguments: 
+			Return: {MigrateSupportedVersion: Null, MigrateVersionNotifiers: Null, NotifyCurrentTargets: Option<Bytes>, MigrateAndNotifyOldTargets: Null}
+		RemoteLockedFungibles - Map - {"map":{"hashers":["Twox64Concat","Blake2_128Concat","Blake2_128Concat"],"key":821,"value":822}}
+			Arguments: u32, AccountId32, Lookup431
+			Return: {amount: u128, owner: Lookup81, locker: Lookup81, consumers: Vec<(Null,u128)>}
+		LockedFungibles - Map - {"map":{"hashers":["Blake2_128Concat"],"key":0,"value":826}}
+			Arguments: 
+			Return: {arg: undefinedVec<(u128,XcmVersionedLocation)>}
+		XcmExecutionSuspended - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		ShouldRecordXcm - Plain - {"plain":8}
+			Arguments: 
+			Return: {}
+		RecordedXcm - Plain - {"plain":400}
+			Arguments: 
+			Return: {arg: undefinedVec<StagingXcmV4Instruction>}
+parsing pallet MessageQueue
+	- query
+		BookStateFor - Map - {"map":{"hashers":["Twox64Concat"],"key":433,"value":830}}
+			Arguments: Lookup434
+			Return: {begin: u32, end: u32, count: u32, readyNeighbours: Option<PalletMessageQueueNeighbours>, messageCount: u64, size_: u64}
+		ServiceHead - Plain - {"plain":433}
+			Arguments: 
+			Return: {Ump: Lookup434}
+		Pages - Map - {"map":{"hashers":["Twox64Concat","Twox64Concat"],"key":833,"value":834}}
+			Arguments: Lookup433, u32
+			Return: {remaining: u32, remainingSize: u32, firstIndex: u32, first: u32, last: u32, heap: Bytes}
+parsing pallet AssetRate
+	- query
+		ConversionRateToNative - Map - {"map":{"hashers":["Blake2_128Concat"],"key":55,"value":436}}
+			Arguments: Null, Null, Null, {"location":"StagingXcmV3MultiLocation","assetId":"XcmV3MultiassetAssetId"}, {"location":"StagingXcmV4Location","assetId":"StagingXcmV4AssetAssetId"}
+			Return: {}
+parsing pallet Beefy
+	- query
+		Authorities - Plain - {"plain":838}
+			Arguments: 
+			Return: {arg: undefinedVec<SpConsensusBeefyEcdsaCryptoPublic>}
+		ValidatorSetId - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		NextAuthorities - Plain - {"plain":838}
+			Arguments: 
+			Return: {arg: undefinedVec<SpConsensusBeefyEcdsaCryptoPublic>}
+		SetIdSession - Map - {"map":{"hashers":["Twox64Concat"],"key":12,"value":4}}
+			Arguments: 
+			Return: {}
+		GenesisBlock - Plain - {"plain":152}
+			Arguments: 
+			Return: {arg: undefinedOption<u32>}
+parsing pallet Mmr
+	- query
+		RootHash - Plain - {"plain":13}
+			Arguments: 
+			Return: {}
+		NumberOfLeaves - Plain - {"plain":12}
+			Arguments: 
+			Return: {}
+		Nodes - Map - {"map":{"hashers":["Identity"],"key":12,"value":13}}
+			Arguments: 
+			Return: {}
+parsing pallet BeefyMmrLeaf
+	- query
+		BeefyAuthorities - Plain - {"plain":841}
+			Arguments: 
+			Return: {id: u64, len: u32, keysetCommitment: H256}
+		BeefyNextAuthorities - Plain - {"plain":841}
+			Arguments: 
+			Return: {id: u64, len: u32, keysetCommitment: H256}
+DONE!
+Done in 2.05s.
