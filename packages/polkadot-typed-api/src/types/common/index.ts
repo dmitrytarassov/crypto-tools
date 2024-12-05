@@ -1,1 +1,1 @@
-import type {BrokenNumberType} from "./BrokenNumberType"
+import type { BrokenNumberType } from "./BrokenNumberType";
