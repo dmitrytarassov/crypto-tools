@@ -12,4 +12,8 @@ Pay out a page of the stakers behind a validator for the given era and page.
 
 ### validate(validatorPrefsObject)
 
-generates a transaction to validate the staking conditions validatorPrefsObject: { blocked, commission }
+Generates a transaction to validate the staking conditions validatorPrefsObject: { blocked, commission }
+
+### nominate(targets)
+
+Declare the desire to nominate targets for the origin controller
