@@ -7,9 +7,3 @@ module.exports = {
     ecmaVersion: 2021,
   }
 }
-
-
-
-
-
-
