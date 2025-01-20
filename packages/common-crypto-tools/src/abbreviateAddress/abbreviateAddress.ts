@@ -1,25 +1,9 @@
-export type Size = {
-  start: number;
-  end: number;
-  include0x?: boolean;
-};
-
-export type Options = {
-  size: number | [number, number] | Size;
-  symbolsCount?: number;
-  symbol?: string;
-  ignoreList?: string[];
-};
-
-const defaults = {
-  symbolsCount: 3,
-  size: 4,
-  symbol: ".",
-};
+import { defaults } from "./constants/defaults";
+import { Options } from "./types/options";
 
 export function abbreviateAddress(
   address: string,
-  options?: Options | number
+  options?: Options | number,
 ): string {
   if (
     typeof options === "object" &&
@@ -72,6 +56,6 @@ export function abbreviateAddress(
       : defaults.symbol;
 
   return `${address.slice(0, _symbolsAtStart)}${symbol.repeat(
-    symbolsCount
+    symbolsCount,
   )}${address.slice(-_symbolsAtEnd)}`;
 }
