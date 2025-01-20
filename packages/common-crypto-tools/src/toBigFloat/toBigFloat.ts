@@ -2,7 +2,7 @@ import BigNumber from "bignumber.js";
 import { BigNumber as EthersBigNumber } from "ethers";
 
 export function toBigFloat(
-  value: BigNumber.Value | EthersBigNumber
+  value: BigNumber.Value | EthersBigNumber,
 ): BigNumber {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

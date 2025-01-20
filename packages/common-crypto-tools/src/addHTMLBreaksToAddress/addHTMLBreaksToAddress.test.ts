@@ -5,7 +5,7 @@ import {
   invisibleSpace,
 } from "./addHTMLBreaksToAddress";
 
-import { expectError } from "../../../test_utils/expectError";
+import { expectError } from "../../../../test_utils/expectError";
 
 describe("addHTMLBreaksToAddress", function () {
   it("should add 1 invisible space", () => {
@@ -14,13 +14,13 @@ describe("addHTMLBreaksToAddress", function () {
 
   it("should add many invisible spaces", () => {
     expect(addHTMLBreaksToAddress("asdfghjklqwertyuiop")).toEqual(
-      `asdf${invisibleSpace}ghjk${invisibleSpace}lqwe${invisibleSpace}rtyu${invisibleSpace}iop`
+      `asdf${invisibleSpace}ghjk${invisibleSpace}lqwe${invisibleSpace}rtyu${invisibleSpace}iop`,
     );
   });
 
   it("should add many invisible spaces each 6 symbols", () => {
     expect(addHTMLBreaksToAddress("asdfghjklqwertyuiop", 6)).toEqual(
-      `asdfgh${invisibleSpace}jklqwe${invisibleSpace}rtyuio${invisibleSpace}p`
+      `asdfgh${invisibleSpace}jklqwe${invisibleSpace}rtyuio${invisibleSpace}p`,
     );
   });
 

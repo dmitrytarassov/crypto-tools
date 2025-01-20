@@ -20,9 +20,9 @@ describe("toBigNumber", () => {
 
   it("should convert from bigint", () => {
     expect(
-      toBigNumber(BigInt(Number.MAX_SAFE_INTEGER * 123321)).toString()
+      toBigNumber(BigInt(Number.MAX_SAFE_INTEGER * 123321)).toString(),
     ).toEqual(
-      BigNumber.from(BigInt(Number.MAX_SAFE_INTEGER * 123321)).toString()
+      BigNumber.from(BigInt(Number.MAX_SAFE_INTEGER * 123321)).toString(),
     );
   });
 
