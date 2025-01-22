@@ -28,5 +28,5 @@ export function normalizeNetwork(network: string): string {
     }
   }
 
-  throw new Error(`Unsupported network: ${network}`);
+  return "unknown";
 }

@@ -1,7 +1,7 @@
 export const invisibleSpace = "&#8203;";
 
 export function addHTMLBreaksToAddress(
-  address: string,
+  address: string = "",
   lettersBeforeSpace = 4,
 ): string {
   if (lettersBeforeSpace < 0) {

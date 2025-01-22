@@ -61,5 +61,27 @@ describe("abbreviateAddress", () => {
         symbolsCount: 2,
       }),
     ).toEqual("0x38--CE");
+
+    expect(abbreviateAddress(undefined)).toEqual("...");
+  });
+
+  it("should ignore address from ignore list", () => {
+    const ignore = "0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE";
+
+    expect(
+      abbreviateAddress(ignore, { size: 4, ignoreList: [ignore] }),
+    ).toEqual(ignore);
+
+    const anotherAddress = "0xaa77fbDe425d21f29F4cB3e739Cf75CDECf8EdCE";
+    expect(
+      abbreviateAddress(anotherAddress, { size: 4, ignoreList: [ignore] }),
+    ).toEqual("0xaa77...EdCE");
+  });
+
+  it("should return the same address if size is less than 0", () => {
+    const address = "0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE";
+
+    expect(abbreviateAddress(address, { size: 0 })).toEqual(address);
+    expect(abbreviateAddress(address, { size: -1 })).toEqual(address);
   });
 });

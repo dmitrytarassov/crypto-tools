@@ -2,7 +2,7 @@ import { defaults } from "./constants/defaults";
 import { Options } from "./types/options";
 
 export function abbreviateAddress(
-  address: string,
+  address: string = "",
   options?: Options | number,
 ): string {
   if (
