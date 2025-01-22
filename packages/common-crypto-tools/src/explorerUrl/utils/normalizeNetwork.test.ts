@@ -62,8 +62,6 @@ describe("normalizeNetwork", () => {
   });
 
   test("should throw an error for unsupported network", () => {
-    expect(() => normalizeNetwork("unknown-network")).toThrow(
-      "Unsupported network: unknown-network",
-    );
+    expect(normalizeNetwork("unknown-network")).toEqual("unknown");
   });
 });

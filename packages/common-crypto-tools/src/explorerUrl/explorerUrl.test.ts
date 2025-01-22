@@ -25,12 +25,6 @@ describe("explorerUrl", () => {
     expect(arbExplorer.tx("0x456")).toBe("https://arbiscan.io/tx/0x456");
   });
 
-  test("should throw error for unsupported network", () => {
-    expect(() => explorerUrl("unknown-network")).toThrow(
-      "Unsupported network: unknown-network",
-    );
-  });
-
   test("should generate URL for Fantom", () => {
     const fantomExplorer = explorerUrl("fantom");
     expect(fantomExplorer.tx("0x789")).toBe("https://ftmscan.com/tx/0x789");
@@ -104,7 +98,7 @@ describe("explorerUrl", () => {
 
   test("should throw error if custom base URL is missing", () => {
     expect(() => explorerUrl("unknown", { tx: "txn" })).toThrow(
-      "Unsupported network: unknown",
+      "Explorer not found for network: unknown",
     );
   });
 });

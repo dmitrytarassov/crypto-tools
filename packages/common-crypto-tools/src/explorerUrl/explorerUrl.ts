@@ -7,9 +7,8 @@ export function explorerUrl(network: string, config: Config = {}): Explorer {
   const normalizedNetwork = normalizeNetwork(network);
 
   const baseUrl = config.base || explorers[normalizedNetwork];
-
+  console.log(baseUrl);
   if (!baseUrl) {
-    console.log(explorers, config);
     throw new Error(`Explorer not found for network: ${normalizedNetwork}`);
   }
 

@@ -7,143 +7,164 @@
 
 ## Tools
 - [abbreviateAddress](#abbreviateaddress) - truncate address, like `0x387...dCE`
-- addHTMLBreaksToAddress - add invisible breaks to string, to make it breakable
+- [addHTMLBreaksToAddress](#addHTMLBreaksToAddress) - add invisible breaks to string, to make it breakable
 - [removeLeading0x](#removeleading0x) - remove leading 0x from string, useful for logs parsing `0x387...dCE` -> `387...dCE`
 - [toBigNumber](#to_big_number) - transform any digital value to `EthersBigNumber`
 - [toBigFloat](#to_big_float) - transform any digital value to floated `BigNumber`
 - [explorerUrl](#explorerUrl) - generates blockchain explorer URLs for transactions, addresses, and blocks.
 
 ## <a name="abbreviateaddress"></a>abbreviateAddress
-**Usage**
+
+Shortens blockchain addresses by keeping characters at the start and end, replacing the middle with symbols.
+
+### Parameters
+- `address`: The blockchain address to abbreviate.
+- `options`: Config for customization:
+    - `number`: Sets characters to keep at start/end.
+    - `Options` (object): Advanced settings like size, symbol, and ignore list.
+
+### Usage
+
+#### Default
 ```typescript
 import { abbreviateAddress } from "common-crypto-tools";
 
-const shortedAddress = await abbreviateAddress("account_address", 3); // "acc...ess"
+abbreviateAddress("0x1234567890abcdef1234567890abcdef");
+// Output: "0x1234...cdef"
 ```
 
-**Params**
-- address: `string`
-- options or symbols count
-
-**Options**
-
+#### Custom Size and Symbol
 ```typescript
-type Size = {
-  start: number;
-  end: number;
-  include0x?: boolean;
-};
+abbreviateAddress("0x1234567890abcdef1234567890abcdef", {
+  size: { start: 4, end: 4 },
+  symbol: "*",
+  symbolsCount: 5,
+});
+// Output: "0x1234*****cdef"
+```
 
-type Options = {
-  size: number | [number, number] | Size;
-  symbolsCount?: number;
-  symbol?: string;
-  ignoreList?: string[];
+#### Ignore List
+```typescript
+abbreviateAddress("0x1234567890abcdef1234567890abcdef", {
+  ignoreList: ["0x1234567890abcdef1234567890abcdef"],
+});
+// Output: "0x1234567890abcdef1234567890abcdef"
+```
+
+#### Advanced
+```typescript
+abbreviateAddress("0x1234567890abcdef1234567890abcdef", {
+  size: [2, 6],
+  symbol: ".",
+});
+// Output: "0x12...cdef12"
+```
+
+## <a name="addHTMLBreaksToAddress"></a>addHTMLBreaksToAddress
+
+The `addHTMLBreaksToAddress` function adds invisible HTML breaks to a string (e.g., a blockchain address) at regular intervals, making it more readable or ensuring proper wrapping in HTML contexts.
+
+### Parameters
+- `address` (string): The input string to format. Defaults to an empty string.
+- `lettersBeforeSpace` (number): The number of characters between each inserted invisible space. Must be a positive number.
+
+### Returns
+A `string` with invisible HTML breaks added at the specified intervals.
+
+### Usage
+
+#### Default Usage
+```typescript
+import { addHTMLBreaksToAddress } from 'common-crypto-tools';
+
+console.log(addHTMLBreaksToAddress("0x1234567890abcdef"));
+// Output: "0x123&#8203;4567&#8203;890a&#8203;bcde&#8203;f"
+```
+
+#### Custom Interval
+```typescript
+console.log(addHTMLBreaksToAddress("0x1234567890abcdef", 6));
+// Output: "0x1234&#8203567890&#8203abcdef"
+```
+
+#### Error Handling
+```typescript
+try {
+  addHTMLBreaksToAddress("0x1234567890abcdef", -1);
+} catch (error) {
+  console.error(error.message);
+  // Output: "Param lettersBeforeSpace is to small: -1"
 }
 ```
 
-**Return value**
-```typescript
-string
-```
-
-**Examples**
-```typescript
-import { abbreviateAddress } from "common-crypto-tools";
-
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE")
-// "0x3877...EdCE")
-
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", 3)
-// "0x387...dCE"
-
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: 2,
-})
-// "0x38...CE"
-  
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: [1, 2],
-})
-// "0x3...CE"
-  
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: {
-    start: 1,
-    end: 2,
-  },
-})
-// "0x3...CE"
-  
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: {
-    start: 3,
-    end: 2,
-    include0x: true,
-  },
-})
-// "0x3...CE"
-  
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: 2,
-  symbol: "-",
-})
-// "0x38---CE"
-  
-abbreviateAddress("0x3877fbDe425d21f29F4cB3e739Cf75CDECf8EdCE", {
-  size: 2,
-  symbol: "-",
-  symbolsCount: 2,
-})
-// "0x38--CE"
-```
-
 ## <a name="removeleading0x"></a>removeLeading0x
-**Usage**
+Removes the `0x` prefix from a string if it exists.
+
+### Parameters
+- `data` (string): Input string.
+
+### Returns
+A string without the `0x` prefix, or the original string if no prefix is found.
+
+### Examples
 ```typescript
-import { removeLeading0x } from "common-crypto-tools";
-
-removeLeading0x("0x60b521110672f6f871978fd3ac4a835b5e30c3fa727c04c70dbc543fcad38b0e"); // 60b521110672f6f871978fd3ac4a835b5e30c3fa727c04c70dbc543fcad38b0e
-```
-
-**Params**
-- value: `string`
-
-**Return value**
-```typescript
-string
+removeLeading0x("0x123456"); // "123456"
+removeLeading0x("123456");   // "123456"
+removeLeading0x("0x");       // ""
 ```
 
 ## <a name="to_big_number"></a>toBigNumber
-**Usage**
+Converts a `BigNumberish` value into an Ethers `BigNumber` instance.
+
+### Parameters
+- `value` (`BigNumberish`): The input value to convert. Can be a number, string, or other compatible type.
+
+### Returns
+An Ethers `BigNumber` instance representing the input value.
+
+### Examples
 ```typescript
-import { toBigNumber } from "common-crypto-tools";
+import { toBigNumber } from 'common-crypto-tools';
 
-const value = toBigNumber(123321); // BigNumber.from(123321)
-```
+// Convert number
+console.log(toBigNumber(123).toString());
+// Output: "123"
 
-**Params**
-- value: `BigNumber | Bytes | bigint | string | number`
+// Convert string
+console.log(toBigNumber("456").toString());
+// Output: "456"
 
-**Return value**
-```typescript
-BigNumber
+// Convert hex string
+console.log(toBigNumber("0x1a").toString());
+// Output: "26"
 ```
 
 ## <a name="to_big_float"></a>toBigFloat
-**Usage**
+Converts a value (BigNumber, Ethers BigNumber, or other valid input) into a `BigNumber` instance for consistent floating-point operations.
+
+### Parameters
+- `value` (`BigNumber.Value | EthersBigNumber`): The input value to convert. Supports BigNumber-compatible formats or Ethers BigNumber.
+
+### Returns
+A `BigNumber` instance representing the input value.
+
+### Examples
 ```typescript
-import { toBigFloat } from "common-crypto-tools";
+import { toBigFloat } from 'common-crypto-tools';
+import { BigNumber as EthersBigNumber } from 'ethers';
 
-const value = toBigFloat(123321.1234); // new BigNumber(123321.1234)
-```
+// Convert Ethers BigNumber
+const ethersValue = EthersBigNumber.from("1000000000000000000");
+console.log(toBigFloat(ethersValue).toString());
+// Output: "1000000000000000000"
 
-**Params**
-- value: `EthersBigNumber | string | number`
+// Convert number
+console.log(toBigFloat(123.456).toString());
+// Output: "123.456"
 
-**Return value**
-```typescript
-BigNumber
+// Convert string
+console.log(toBigFloat("12345.6789").toString());
+// Output: "12345.6789"
 ```
 
 ## <a name="explorerUrl"></a>explorerUrl
